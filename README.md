@@ -19,29 +19,31 @@ Priemira implementação tem como empresa cliente a GloballVox;
 
 ## 🛠️ Construído com:
 
-<link align="center" height="30" width="40" alt="logoPHP" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> PHP para Linguagem de programação <br>
 
-<link align="center" height="30" width="40" alt="logoMySql" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> Banco de Dados MySql <br>
+<img align="center" height="30" width="40" alt="logo PHP" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" />
+
+<img align="center" height="30" width="40" alt="logo MySql" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg" /><br>
+
 
 
 ## 🖇️ Colaborando
 
-Bianca Magalhães: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Bianca Magalhães: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Gustavo Gomes: <a href="https://github.com/GustavoGomesDaSilva" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Gustavo Gomes: <a href="https://github.com/GustavoGomesDaSilva" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Higor Tupinambá: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Higor Tupinambá: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Jonatas: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Jonatas: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Leonardo Dias: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Leonardo Dias: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
-Rodrigo: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+Rodrigo: <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img align="center" height="30" width="40" alt="logo GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </a>
 
 
