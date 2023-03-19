@@ -7,7 +7,7 @@
 
 main{
     width: 100%;
-    height: auto;
+    height: 100vh;
     /* background-color: aqua; */
 }
 #homeTopo{
@@ -21,7 +21,7 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    height: fit-content;
+    height: auto;;
 }
 header ul{
     list-style: none;
@@ -34,6 +34,12 @@ header ul li{
     font-size: 20px;
     margin: 0 2vw;
 }
+header ul li:hover{
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 23px;
+    transition: all 0.3s;
+}
 header #btnTopoContainer{
     width: 20%;
 }
@@ -45,6 +51,13 @@ header #btnTopoContainer{
     color: #f2f2f2;
     font-weight: 500;
     font-size: 18px;
+    box-shadow: #c5c5c5 3px 3px 3px;
+}
+.btnTopo:hover{
+    width: 9vw;
+    height: 7vh;
+    box-shadow: #3a3a3a 3px 3px 3px;
+    transition: all 0.3s;
 }
 #conteudoHomeTopo{
     display: flex;
@@ -53,13 +66,14 @@ header #btnTopoContainer{
 }
 
 #imgsCarrosEsquerda{
-    /* width: fit-content; */
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 #imgsCarrosEsquerda img{
-    width: fit-content;
+    width: 80%;
+    height: 80%;
 }
 
 .txtRoxo{
@@ -78,13 +92,13 @@ header #btnTopoContainer{
     justify-content: center;
 }
 #txtCentral p{
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 47px;
+    font-weight: 580;
     width: 90%;
     text-align: center;
     margin: 0 auto;
 }
-#txtCentral button{
+#txtCentral #btnPrincipal{
     background: linear-gradient(218deg, rgba(255,199,0,1) 53%, rgba(0,0,0,1) 190%);
     width: 18vw;
     height: 7vh;
@@ -92,13 +106,22 @@ header #btnTopoContainer{
     color: #f2f2f2;
     font-weight: 500;
     font-size: 18px;
+    box-shadow: #c5c5c5 3px 3px 3px;
+}
+#txtCentral #btnPrincipal:hover{
+    width: 19vw;
+    height: 8vh;
+    font-size: 19px;
+    box-shadow: #3a3a3a 3px 3px 3px;
+    transition: all 0.3s;
 }
 #imgsCarrosDireita{
-    /* width: fit-content; */
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 #imgsCarrosDireita img{
-    width: fit-content;
+    width: 80%;
+    height: 80%;
 }
