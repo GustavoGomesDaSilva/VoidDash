@@ -24,7 +24,7 @@
                 <p id="nomeUsuario" name="nomeUsuario">Marcos Oliveira</p>
                 <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p>
                 <div id="iconsTopEsquerda">
-                    <img src="../components/assets/sairIcon.png" alt="">
+                    <a href="../index.php"><img src="../components/assets/sairIcon.png" alt=""></a>
                     <img src="../components/assets/configIcon.png" alt="">
                 </div>
             </section>
