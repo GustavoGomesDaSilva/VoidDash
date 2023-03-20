@@ -18,7 +18,7 @@
     </div>
     <div class="login-direita">
             <div class ="card-login">
-                <img src="img/LogoVoidTech" alt="">
+                <img src="../components/assets/logoVoidTech.png" alt="">
                 <h1>Cadastre-se</h1>
                 <div class="text-field">
                     <label for="usuario">Endereço de Email</label>
