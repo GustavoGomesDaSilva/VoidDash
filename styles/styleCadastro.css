@@ -30,19 +30,33 @@ body{
   
 }
 
-.login-email::placeholder{
+.login-senha::placeholder{
+    background-image: url(./img/LockKey.png);
+     background-repeat: no-repeat;
+     background-position: left center;
+     text-align: center;
+ }
+
+ .login-email::placeholder{
+    background-image: url(./img/EnvelopeSimple.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-align: center;
+}
+.login-email-confirmar::placeholder{
     background-image: url(./img/EnvelopeSimple.png);
     background-repeat: no-repeat;
     background-position: left center;
     text-align: center;
 }
 
-.login-senha::placeholder{
-   background-image: url(./img/LockKey.png);
+.login-cargo::placeholder{
+    background-image: url(./img/Businessman.png);
     background-repeat: no-repeat;
     background-position: left center;
     text-align: center;
 }
+
 
 .login-direita{
     width: 100vh;
