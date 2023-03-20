@@ -39,7 +39,7 @@
                     <p>V<span class="txtRoxo">o</span><span class="txtLaranja">i</span>dDash<br>
                         Nunca foi tão <span class="txtRoxo">fácil</span>
                         controlar sua <span class="txtRoxo">frota</span></p>
-                    <button id="btnPrincipal">Comece Agora</button>
+                    <a href="views/cadastro.php"><button id="btnPrincipal">Comece Agora</button></a>
                 </div>
                 <div id="imgsCarrosDireita">
                     <img src="components/assets/caminhao4.png" alt="">
