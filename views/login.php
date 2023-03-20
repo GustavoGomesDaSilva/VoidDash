@@ -14,7 +14,7 @@
 <body>
     <div class ="main-login">
     <div class ="login-esquerda">
-        <img src="img/imgLogin" class="imagem-esquerda-login" alt="">
+        <img src="../components/assets/imgLogin.png" class="imagem-esquerda-login" alt="">
     </div>
     <div class="login-direita">
             <div class ="card-login">
@@ -32,7 +32,7 @@
                     <input type="checkbox" id="checkbox"><label for="checkbox" id="lembrar">Lembrar-se de mim</label>
                 </div>
                 <button class="btn-login">Entrar na Plataforma</button>
-                <div class="esqueceu-senha">Esqueceu sua Senha</div>
+                <div class="esqueceu-senha"><a href="#"> Esqueceu sua Senha</a></div>
                 <div class="cadastrar" href="cadastro.php">Não Possui Conta: Cadastre-se Agora</div>
             </div>
     </div>

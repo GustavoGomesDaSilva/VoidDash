@@ -14,7 +14,7 @@
 <body>
     <div class ="main-login">
     <div class ="login-esquerda">
-        <img src="img/imgCadastro.png" class="imagem-esquerda-login" alt="">
+        <img src="../components/assets/imgCadastro.png" class="imagem-esquerda-login" alt="">
     </div>
     <div class="login-direita">
             <div class ="card-login">
