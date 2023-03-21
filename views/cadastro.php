@@ -1,5 +1,6 @@
 <?php 
-include("config.php"); 
+include("../config/config.php"); 
+include("../config/cadastrar.php")
 
 // $nome = mysqli_real_escape_string($conn, trim($_POST['nome']));
 // $email = mysqli_real_escape_string($conn, trim($_POST['email']));
@@ -55,7 +56,7 @@ include("config.php");
       
        
             <div class ="card-login">
-                <form action="cadastrar.php" method="POST">
+                <form action="../config/cadastrar.php" method="POST">
                 <img src="../components/assets/logoVoidTech.png" alt="">
                 <h1>Cadastre-se</h1>
                 <div class="text-field">
@@ -75,7 +76,7 @@ include("config.php");
                     <input type="password" class="login-senha" name="senha" placeholder="Senha">
                 </div>
                 
-                <button type="submit" class="btn-login" >CADASTRAR</button>
+                <button type="submit" class="btn-login" name="btn-cadastrar" >CADASTRAR</button>
                 </form>
             </div>
     </div>
