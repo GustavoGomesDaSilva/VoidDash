@@ -273,7 +273,39 @@ header #btnTopoContainer{
 #sobreNos{
     width: 98vw;
     height: 98vh;
+    margin-top: 8vh;
 }
-#sobreNos #tituloServicos{
+#sobreNos #tituloSobre {
     margin: auto;
+    text-align: center;
+    width: fit-content;
+    margin: 13vh auto;
+}
+#conteudoSobre{
+    width: 76vw;    
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+#imgSobre{
+    width: 38vw;
+    height: 390px;
+    box-shadow: -23px 3px 30px 0px rgba(189,189,189,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+#imgSobre img{
+    width: 32vw;
+    height: 370px;
+}
+#txtSobre{
+    width: 37vw;
+    height: 400px;
+    /* background-color: #242424; */
+    box-shadow: 0px 0px 24px 0px rgba(115,115,115,1);
+    padding: 3vw;
+}
+#txtSobre p{
+    line-height: 40px;
 }

@@ -97,13 +97,16 @@
         </section>
         <!-- fim servicos -->
         <section id="sobreNos">
-        <h1 id="tituloServicos"><span class="tituloRoxo">Sobre Nós</span></h1>
-            <article>
-                <div>
-
+        <h1 id="tituloSobre"><span class="tituloRoxo">Sobre Nós</span></h1>
+            <article id="conteudoSobre">
+                <div id="imgSobre">
+                    <img src="components/assets/sobreNosImg.png" alt="">
                 </div>
-                <div>
-
+                <div id="txtSobre">
+                    <p>A voidTech é uma empresa de soluções tecnológicas que se dedica a fornecer soluções personalizadas e inovadoras para nossos clientes. Com nossa equipe altamente qualificada e experiente, estamos sempre atualizados com as últimas tendências do mercado. 
+                    <br><br>
+                    A VoidTech está comprometida em fornecer atendimento excepcional aao cliente e estamos prontos para ajudar seus clientes a alcançar seus objetivos de negócios através de tecnologia de ponta.
+                    </p>
                 </div>
             </article>
         </section>

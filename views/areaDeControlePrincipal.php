@@ -27,13 +27,8 @@ session_start();
                 <p id="nomeUsuario" name="nomeUsuario">Marcos Oliveira</p>
                 <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p>
                 <div id="iconsTopEsquerda">
-<<<<<<< HEAD
-                    <a href="../index.php"><img src="../components/assets/sairIcon.png" alt=""></a>
-                    <a href="areaDeControleConfig.php"><img src="../components/assets/configIcon.png" alt=""></a>
-=======
                     <a href="../config/logout.php"><img src="../components/assets/sairIcon.png" alt=""></a>
-                    <img src="../components/assets/configIcon.png" alt="">
->>>>>>> 6f543c11d1c2facfbeb543aa28112fb7015b2d44
+                    <a href="areaDeControleConfig.php"><img src="../components/assets/configIcon.png" alt=""></a>
                 </div>
             </section>
             <section id="opcoesMenu">
