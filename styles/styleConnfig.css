@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Poppins', sem serifa;
+}
+
+main{
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFF6;
+    display: flex;
+    /* background-color: aqua; */
+    
+}
+
+#topoPainel{
+    background-image: url("../components/assets/fundoHeaderPainel.png");
+    background-size: 100vw 100%;
+    background-repeat: no-repeat;
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+#topoPainel img{
+    margin-top: 13px;
+    margin-right: 13px;
+    width: 130px;
+    height: 90px;
+}
+
+
+#menuEsquerda{
+    z-index: 2;
+    width: 20vw;
+    height: 100vh;
+    background-color: #fff;
+    /* background-color: aqua; */
+    box-shadow: 10px 3px 21px rgb(92, 92, 92);
+
+
+}
+#menuEsquerda #topoMenuEsquerda{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 43vh;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-top: 4%;
+}
+#menuEsquerda #topoMenuEsquerda img{
+    width: 50%;
+    height: 50%;
+}
+#menuEsquerda #topoMenuEsquerda p{
+    margin: 5px 0;
+}
+#menuEsquerda #topoMenuEsquerda #iconsTopEsquerda{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#menuEsquerda #topoMenuEsquerda #iconsTopEsquerda img{
+    width: 22px;
+    height: 22px;
+}
+#menuEsquerda #topoMenuEsquerda #iconsTopEsquerda img:hover{
+    cursor: pointer;
+}
+#menuEsquerda #opcoesMenu{
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}
+#menuEsquerda #opcoesMenu ul{
+    list-style: none;
+}
+#menuEsquerda #opcoesMenu li{
+    margin: 4vh 0;
+    height: max-content;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+#menuEsquerda #opcoesMenu li:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+    color: #727272;
+    transition: all 0.3s;
+}
+#menuEsquerda #opcoesMenu li img{
+    margin-right: 5px;
+}
+#painlePConfig form{
+    width: 50vw;
+    margin: auto;
+}
+#painlePConfig form input{
+    width: max-content;
+    height: 6vh;
+}

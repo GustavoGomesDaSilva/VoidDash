@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styleHome.css">
+    <link rel="stylesheet" href="styles/stylePrincipal.css">
 
     <link rel="shortcut icon" href="components/assets/LogoVoidTech.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
                     <a rel="" href="views/cadastro.php"><button class="btnTopo">Cadastro</button></a>
                 </div>
             </header>
-            <article id="conteudoHomeTopo">
+            <section id="conteudoHomeTopo">
                 <div id="imgsCarrosEsquerda">
                     <img src="components/assets/caminhao3d 1.png" alt="">
                     <img src="components/assets/helicoptero 1.png" alt="">
@@ -45,9 +45,69 @@
                     <img src="components/assets/caminhao4.png" alt="">
                     <img src="components/assets/carrinho1.png" alt="">
                 </div>
-            </article>
+            </section>
         </div>
+        <section id="sessaoServicos">
+            <h1 id="tituloServicos"><span class="tituloRoxo">Nossos</span><span class="tituloAmarelo"> Serviços</span></h1>
+            <p class="subTitulo">Tenha total controle sobre sua frota com nossa vasta gama de serviços</p>
+            <article id="cartaoUm">
+                <div id="imgCardUm">
+                    <img src="components/assets/gpsImgCard1.png" alt="">
+                </div>
+                <div id="txtCardUm">
+                    <h2>Controle da Forta</h2>
+                    <p>loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem</p>
+                    <a href="views/login.php">Saiba Mais -></a>
+                </div>
+            </article>
+
+            <article id="cartaoDois">
+                
+                <div id="txtCardDois">
+                    <h2>Controle da Forta</h2>
+                    <p>loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem</p>
+                    <a href="views/login.php">Saiba Mais -></a>
+                </div>
+                <div id="imgCardDois">
+                    <img src="components/assets/imgCarddois.png" alt="">
+                </div>
+            </article>
+            <article id="cardsVerticais">
+                <section class="CardVertical">
+                    <div id="imgCardVerticalUm">   
+                        <img src="components/assets/imgCardTres.png" alt="">
+                    </div>
+                    <div class="txtCardVertical">
+                        <h5>Controle Financeiro</h5>
+                        <p>Controle suas multas, impostos e finanças gerais</p>
+                        <a href="views/login.php">Saiba Mais -></a>
+                    </div>
+                </section>
+                <section class="CardVertical">
+                    <div id="imgCardVerticalDois">   
+                        <img src="components/assets/imgCardQuatro.png" alt="">
+                    </div>
+                    <div class="txtCardVertical">
+                        <h5>Manutenção</h5>
+                        <p>Saiba o estado dos veículos de sua Forta</p>
+                        <a href="views/login.php">Saiba Mais -></a>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <!-- fim servicos -->
+        <section id="sobreNos">
+        <h1 id="tituloServicos"><span class="tituloRoxo">Sobre Nós</span></h1>
+            <article>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </article>
+        </section>
+
     </main>
 </body>
-
 </html>

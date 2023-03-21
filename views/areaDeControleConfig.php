@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/stylePainel.css">
+    <link rel="stylesheet" href="../styles/styleConfig.css">
 
     <link rel="shortcut icon" href="../components/assets/LogoVoidTech.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
                 <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p>
                 <div id="iconsTopEsquerda">
                     <a href="../index.php"><img src="../components/assets/sairIcon.png" alt=""></a>
-                    <a href="areaDeControleConfig.php"><img src="../components/assets/configIcon.png" alt=""></a>
+                    <img src="../components/assets/configIcon.png" alt="">
                 </div>
             </section>
             <section id="opcoesMenu">
@@ -42,12 +42,14 @@
             <header id="topoPainel">
                 <img src="../components/assets/LogoVoidTech.png" alt="">
             </header>
-            <article id="painlePrincipal">
-                <div id="txtCentral">
-                    <p>V<span class="txtRoxo">o</span><span class="txtLaranja">i</span>dDash<br>
-                    Nunca foi tão <span class="txtRoxo">fácil</span>
-                    controlar sua <span class="txtRoxo">frota</span></p>
-                </div>
+            <article id="painlePConfig">
+                <form action="" method="get">
+                    Nome: <input type="text" name="nome" id="nome">
+                    email: <input type="text" name="email" id="email">
+
+                    <button id="btnSalvar">Salvar Alterações</button>
+
+                </form>
             </article>
         </div>
     </main>
