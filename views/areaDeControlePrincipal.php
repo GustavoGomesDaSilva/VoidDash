@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,7 +27,7 @@
                 <p id="nomeUsuario" name="nomeUsuario">Marcos Oliveira</p>
                 <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p>
                 <div id="iconsTopEsquerda">
-                    <a href="../index.php"><img src="../components/assets/sairIcon.png" alt=""></a>
+                    <a href="../config/logout.php"><img src="../components/assets/sairIcon.png" alt=""></a>
                     <img src="../components/assets/configIcon.png" alt="">
                 </div>
             </section>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 $host = "localhost";
 $nome_db = "bd_cadastro";

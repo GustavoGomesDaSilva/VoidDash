@@ -1,6 +1,6 @@
 <?php include("../config/config.php");
-      include("")
-
+      include("../config/logar.php");
+      session_start();
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
         <img src="../components/assets/imgLogin.png" class="imagem-esquerda-login" alt="">
     </div>
     <div class="login-direita">
-        <form action="" method="POST">
+        <form action="../config/logar.php" method="POST">
             <div class ="card-login">
                 <img src="../components/assets/logoVoidTech.png" alt="">
                 <h1>Faça login e começe a usar</h1>
@@ -39,7 +39,7 @@
                 <div class ="lembrar">
                     <!-- <input type="checkbox" id="checkbox"><label for="checkbox" id="lembrar">Lembrar-se de mim</label> -->
                 </div>
-                <button class="btn-login" type="submit" name="login">Fazer login</button>
+                <button class="btn-login" type="submit" name="btn-login">Fazer login</button>
         </form>
                 <!-- <div class="esqueceu-senha"><a href="#"> Esqueceu sua Senha</a></div> -->
                 <div class="cadastrar"><a href="cadastro.php">Não Possui Conta: Cadastre-se Agora</div>

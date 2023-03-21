@@ -1,5 +1,6 @@
-<?php include("../config/config.php"); 
-if (isset($_POST['login'])) {
+<?php include("config.php");
+
+if (isset($_POST['btn-login'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
@@ -22,7 +23,7 @@ if (isset($_POST['login'])) {
                 $_SESSION["email"] = $email;
                 $_SESSION["nome"] = $row->nome;
                 $_SESSION["cargo"] = $row->cargo;
-                print "<script>location.href='areaDeControlePrincipal.php';</script>";
+                print "<script>location.href='../views/areaDeControlePrincipal.php';</script>";
             } else{
                 print "<script>alert('Email e/ou senha incorreto(s)');</script>";
                 print "<script>location.href='login.php';</script>";
