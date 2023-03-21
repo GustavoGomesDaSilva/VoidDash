@@ -1,34 +1,23 @@
 <?php
-// Verifica se o formulário foi enviado
 require('config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-  // Recupera os dados do formulário
-  // $email = $_POST["email"];
-  // $nome = $_POST["nome"];
-  // $senha = $_POST["senha"];
   $nome = mysqli_real_escape_string($conn, trim($_POST['nome']));
   $email = mysqli_real_escape_string($conn, trim($_POST['email']));
-  $senha = mysqli_real_escape_string($conn, trim(md5($_POST['senha'])));
+  
+   $senha = mysqli_real_escape_string($conn, trim($_POST['senha']));
+   $hash_senha = password_hash($senha, PASSWORD_DEFAULT);
 
-  // Insere os dados na tabela de funcionários
   $sql = "INSERT INTO tb_funcionarios (`email`, `nome`, `senha`)
-          VALUES ('$email', '$nome', '$senha')";
+          VALUES ('$email', '$nome', '$hash_senha')";
 
-  // Executa a consulta SQL
   if (mysqli_query($conn, $sql)) {
       echo "Funcionário cadastrado com sucesso!";
   } else {
       echo "Erro ao cadastrar funcionário: " . mysqli_error($conn);
-  }
-
-  // Fecha a conexão com o banco de dados
-  mysqli_close($conn);
+  } 
 }
-
-
-
-// session_start();
+?>
+<!-- // session_start();
 //  include("config.php");
 
 //  $nome = mysqli_real_escape_string($conn, trim($_POST['nome']));
@@ -61,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // header('Location: cadastro.php');
 // exit;
-
+{
  
-//   }
-?>
+//    -->

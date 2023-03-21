@@ -1,68 +1,30 @@
-<?php include("config.php");
+<?php
 
-if (isset($_POST['btn-login'])) {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+include("config.php");
+include("cadastrar.php");
 
-    if(strlen($_POST['email']) == 0) {
-        print ('Preencha seu e-mail');
-    } else if(strlen($_POST['senha']) == 0) {
-        print('Preencha sua senha') ;
-    } else {
-        $sql = "SELECT * FROM tb_funcionarios
-            WHERE email = '{$email}'
-            AND senha = '{$senha}'";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+    $senha = mysqli_real_escape_string($conn, trim($_POST['senha']));
 
-            $res = $conn->query($sql) or die($conn->error);
+    $sql = "SELECT * FROM tb_funcionarios WHERE email = '{$email}'";
+    $res = mysqli_query($conn, $sql);
 
-            $row = $res->fetch_object();
+    if ($res && mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
 
-            $qtd = $res->num_rows;
-
-            if($qtd > 0){
-                $_SESSION["email"] = $email;
-                $_SESSION["nome"] = $row->nome;
-                $_SESSION["cargo"] = $row->cargo;
-                print "<script>location.href='../views/areaDeControlePrincipal.php';</script>";
-            } else{
-                print "<script>alert('Email e/ou senha incorreto(s)');</script>";
-                print "<script>location.href='login.php';</script>";
-            }
+        if (password_verify($senha, $row['senha'])) {
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['user_nome'] = $row['nome'];
+            $_SESSION['user_email'] = $row['email'];
+            print "<script>location.href='../views/areaDeControlePrincipal.php';</script>";
+        } else {
+            print "<script>alert('Email e/ou senha incorreto(s)');</script>";
+            print "<script>location.href='login.php';</script>";
         }
-
-    
+    }
 }
-// session_start();
-// if (isset($_POST['login'])) {
-//     $email = $_POST['email'];
-//     $senha = $_POST['senha'];
 
-//     if(strlen($_POST['email']) == 0) {
-//         print ('Preencha seu e-mail');
-//     } else if(strlen($_POST['senha']) == 0) {
-//         print('Preencha sua senha') ;
-//     } else {
-//         $sql = "SELECT * FROM tb_funcionarios
-//             WHERE email = '{$email}'
-//             AND senha = '{$senha}'";
+?>
 
-//             $res = $conn->query($sql) or die($conn->error);
 
-//             $row = $res->fetch_object();
-
-//             $qtd = $res->num_rows;
-
-//             if($qtd > 0){
-//                 $_SESSION["email"] = $email;
-//                 $_SESSION["nome"] = $row->nome;
-//                 $_SESSION["cargo"] = $row->cargo;
-//                 print "<script>Location.heref='dashboard.php';</script";
-//                 print ("logado");
-//             } else{
-//                 print "<script>alert('Email e/ou senha incorreto(s)');</script>";
-//                 print "<script>location.href='login.php';</script>";
-//             }
-//         }
-
-    
-// }

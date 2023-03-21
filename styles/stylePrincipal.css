@@ -37,7 +37,7 @@ header ul li{
 header ul li:hover{
     cursor: pointer;
     color: #A200EE;
-    transform: scale(1.2);
+    transform: scale(1.15);
 
     transition: all 1s;
 }
@@ -55,7 +55,7 @@ header #btnTopoContainer{
     box-shadow: #c5c5c5 3px 3px 3px;
 }
 .btnTopo:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: #3a3a3a 3px 3px 3px;
     transition: all 0.3s;
 }
@@ -115,7 +115,7 @@ header #btnTopoContainer{
     box-shadow: #c5c5c5 3px 3px 3px;
 }
 #txtCentral #btnPrincipal:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     font-size: 19px;
     box-shadow: #3a3a3a 3px 3px 3px;
     transition: all 0.3s;
