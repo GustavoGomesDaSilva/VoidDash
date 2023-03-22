@@ -8,9 +8,8 @@ Nosso produto visa facilitar na geração de relatórios de controle de frotas d
 
 ### 📋 Pré-requisitos
 
-Ter uma frota;
-Ter um computador para o gerente controlar a entrada de dados;
-Ter computador para que os funcionários possam acessar os relatórios e dashboards;
+Gerar relatórios com os dados enviados pela empresa referente a frota;<br>
+
 
 
 ## 📦 Clientes:
