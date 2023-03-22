@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (mysqli_query($conn, $sql)) {
       echo "Funcionário cadastrado com sucesso!";
+      print "<script>location.href='../views/areaDeControlePrincipal.php';</script>";
   } else {
       echo "Erro ao cadastrar funcionário: " . mysqli_error($conn);
   } 
