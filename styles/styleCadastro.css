@@ -9,20 +9,8 @@ body{
     width: 100vw;
     height: 100vh;
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    align-items: center;
-}
-
-.card-login{
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px 35px;
-    background-color: #7B4BA1;
-    border-radius: 20px;
-    box-shadow: 0px 10px 40px #00000056;
 }
 
 .card-login > h1{
@@ -31,27 +19,33 @@ body{
 }
 
 .login-senha::placeholder{
-    background-image: url(./img/LockKey.png);
+    background-image: url(../components/assets/LockKey.png);
      background-repeat: no-repeat;
      background-position: left center;
      text-align: center;
  }
+ .login-nome::placeholder{
+    background-image: url( ../components/assets/Businessman.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-align: center;
+}
 
  .login-email::placeholder{
-    background-image: url(./img/EnvelopeSimple.png);
+    background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
     background-position: left center;
     text-align: center;
 }
 .login-email-confirmar::placeholder{
-    background-image: url(./img/EnvelopeSimple.png);
+    background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
     background-position: left center;
     text-align: center;
 }
 
 .login-cargo::placeholder{
-    background-image: url(./img/Businessman.png);
+    background-image: url(../components/assets/Businessman.png);
     background-repeat: no-repeat;
     background-position: left center;
     text-align: center;
@@ -59,24 +53,30 @@ body{
 
 
 .login-direita{
-    width: 100vh;
+    width: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    /* padding: 30px 35px; */
+    background-color: #7B4BA1;
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px #00000056;
 }
 
 .login-esquerda{
-    width: 50vh;
+    width: 50vW;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #FFD024; */
 }
 
 
 .imagem-esquerda-login{
-    width: 35vw;
+    width: auto;
 }
 
 .text-field{
@@ -93,7 +93,7 @@ body{
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background-color: #d4d4d4;
+    background-color: #d4d4d475;
     color: #F2F2F2;
     font-size: 12pt;
     outline:none;
@@ -112,7 +112,7 @@ body{
 .btn-login{
     width: 100%;
     padding: 16px 0px;
-    margin: 25px;
+    margin: 10px;
     border: none;
     border-radius: 20px;
     background-color: #FFD024;
