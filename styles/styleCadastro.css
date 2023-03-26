@@ -5,7 +5,7 @@ body{
  
 
 }
-.main-login{
+.main-cadastro{
     width: 100vw;
     height: 100vh;
    display: flex;
@@ -13,59 +13,80 @@ body{
    align-items: center;
 }
 
-.card-login > h1{
+#formCadastro h1{
     color: #FEFEFE;
-  
+    font-weight: 400;
+    font-size: 30px;
 }
 
-.login-senha::placeholder{
+.cadastro-senha::placeholder{
     background-image: url(../components/assets/LockKey.png);
      background-repeat: no-repeat;
+     background-size: 7%;
+     padding-left: 15%;
      background-position: left center;
-     text-align: center;
+     text-align: left;
  }
- .login-nome::placeholder{
+ .cadastro-nome::placeholder{
     background-image: url( ../components/assets/Businessman.png);
     background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: 15%;
     background-position: left center;
-    text-align: center;
+    text-align: left;
 }
 
- .login-email::placeholder{
+ .cadastro-email::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: 15%;
     background-position: left center;
-    text-align: center;
+    text-align: left;
 }
-.login-email-confirmar::placeholder{
+.cadastro-email-confirmar::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: 15%;
     background-position: left center;
-    text-align: center;
+    text-align: left;
 }
 
-.login-cargo::placeholder{
+/* .cadastro-cargo::placeholder{
     background-image: url(../components/assets/Businessman.png);
     background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: 15%;
     background-position: left center;
-    text-align: center;
-}
+    text-align: left;
+} */
 
 
-.login-direita{
-    width: 50vw;
+.cadastro-esquerda{
+    width: 44vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* padding: 30px 35px; */
-    background-color: #7B4BA1;
-    border-radius: 15px;
-    box-shadow: 0px 10px 40px #00000056;
+    background-color: #7B4BA1; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px -10px 40px #00000056;
 }
-
-.login-esquerda{
+#formCadastro{
+    /* background-color: #F5F5F5; */
+    width: 60%; 
+}
+#formCadastro img{
+    margin: auto;
+    /* background-color: #F5F5F5; */
+    display: flex;
+    justify-content: center;
+}
+.cadastro-direita{
     width: 50vW;
     height: 100vh;
     display: flex;
@@ -73,11 +94,11 @@ body{
     align-items: center;
     /* background-color: #FFD024; */
 }
-
-
-.imagem-esquerda-login{
-    width: auto;
+.cadastro-direita img{
+    width: 85%;
+    height: 80vh;
 }
+
 
 .text-field{
     display: flex;
@@ -89,15 +110,17 @@ body{
 }
 
 .text-field > input{
-    width: 100%;
+    width: 90%;
+    height: 7vh;
     border: none;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 7px;
+    padding: 0 15px;
     background-color: #d4d4d475;
     color: #F2F2F2;
     font-size: 12pt;
     outline:none;
     box-sizing: border-box;
+    /* margin: auto; */
 }
 
 .text-field > label{
@@ -108,21 +131,36 @@ body{
 .text-field > input::placeholder{
     color: #F2F2F2;
 }
+.text-field input:focus{
+    background-color: #705885b6;
+    border: #ffd024af 1px solid;
+}   
 
-.btn-login{
+#btnCadastro{
     width: 100%;
-    padding: 16px 0px;
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.btn-cadastro{
+    width: 50%;
+    height: 7vh;
+    /* padding: 16px 0px; */
+    /* margin: 10px; */
     border: none;
     border-radius: 20px;
-    background-color: #FFD024;
+    background: linear-gradient(218deg, rgba(255,199,0,1) 53%, rgba(0,0,0,1) 190%);
     outline: none;
     font-weight: 300;
     color:#F5F5F5;
     cursor: pointer;
     box-shadow:0px 10px 40px -12px #FFD024;
+    
 }
-
+.btn-cadastro:hover{
+    transform: scale(1.09);
+    box-shadow: #3a3a3a 3px 3px 3px;
+    transition: all 0.5s;
+}
 .cadastrar{
     color: #F5F5F5;
 }
@@ -138,24 +176,24 @@ body{
 
 
 @media only screen and (max-width :950px){
-    .card-login{
+    .card-cadastro{
         width: 85%;
     }
 }
 
 @media only screen and (max-width: 600px){
-    .main-login{
+    .main-cadastro{
         flex-direction: column;
     }
-    .login-esquerda{
+    .cadastro-esquerda{
         display:none;
     }
-    .login-esquerda{
+    .cadastro-esquerda{
         width: 100%;
         height: auto;
     }
 
-    .login-direita{
+    .cadastro-esquerda{
         width: 100%;
         height: auto;
     }

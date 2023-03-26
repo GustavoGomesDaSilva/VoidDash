@@ -18,15 +18,15 @@
     <main>
         <div id="homeTopo">
             <header>
-                <a href="https://void-tech-empresa.vercel.app/" target="_blank"><img src="components/assets/LogoVoidTech.png" alt=""></a> 
+                <a href="https://void-tech-empresa.vercel.app/" target="_blank"><img src="components/assets/LogoVoidTech.png" alt=""></a>
                 <ul>
                     <li>Home</li>
                     <li>Serviços</li>
                     <li>Sobre Nós</li>
-                    <li>Contato</li>                    
+                    <li>Contato</li>
                 </ul>
                 <div id="btnTopoContainer">
-                   <a href="views/login.php"><button class="btnTopo">Login</button></a>
+                    <a href="views/login.php"><button class="btnTopo">Login</button></a>
                     <a rel="" href="views/cadastro.php"><button class="btnTopo">Cadastro</button></a>
                 </div>
             </header>
@@ -62,7 +62,7 @@
             </article>
 
             <article id="cartaoDois">
-                
+
                 <div id="txtCardDois">
                     <h2>Controle da Forta</h2>
                     <p>loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem</p>
@@ -74,7 +74,7 @@
             </article>
             <article id="cardsVerticais">
                 <section class="CardVertical">
-                    <div id="imgCardVerticalUm">   
+                    <div id="imgCardVerticalUm">
                         <img src="components/assets/imgCardTres.png" alt="">
                     </div>
                     <div class="txtCardVertical">
@@ -84,7 +84,7 @@
                     </div>
                 </section>
                 <section class="CardVertical">
-                    <div id="imgCardVerticalDois">   
+                    <div id="imgCardVerticalDois">
                         <img src="components/assets/imgCardQuatro.png" alt="">
                     </div>
                     <div class="txtCardVertical">
@@ -97,20 +97,50 @@
         </section>
         <!-- fim servicos -->
         <section id="sobreNos">
-        <h1 id="tituloSobre"><span class="tituloRoxo">Sobre Nós</span></h1>
+            <h1 id="tituloSobre"><span class="tituloRoxo">Sobre Nós</span></h1>
             <article id="conteudoSobre">
                 <div id="imgSobre">
                     <img src="components/assets/sobreNosImg.png" alt="">
                 </div>
                 <div id="txtSobre">
-                    <p>A voidTech é uma empresa de soluções tecnológicas que se dedica a fornecer soluções personalizadas e inovadoras para nossos clientes. Com nossa equipe altamente qualificada e experiente, estamos sempre atualizados com as últimas tendências do mercado. 
-                    <br><br>
-                    A VoidTech está comprometida em fornecer atendimento excepcional aao cliente e estamos prontos para ajudar seus clientes a alcançar seus objetivos de negócios através de tecnologia de ponta.
+                    <p>A voidTech é uma empresa de soluções tecnológicas que se dedica a fornecer soluções personalizadas e inovadoras para nossos clientes. Com nossa equipe altamente qualificada e experiente, estamos sempre atualizados com as últimas tendências do mercado.
+                        <br><br>
+                        A VoidTech está comprometida em fornecer atendimento excepcional aao cliente e estamos prontos para ajudar seus clientes a alcançar seus objetivos de negócios através de tecnologia de ponta.
                     </p>
                 </div>
             </article>
+            <article id="propositos">
+                <h1 id="tituloProposito"><span class="tituloRoxo">Nosso</span><span class="tituloAmarelo"> Propósito</span></h1>
+                <p class="subTitulo">Nosso propósito como empresa, é ajudar e transformar a vida de pessoas</p>
+
+                <section>
+                    <div class="cardProposito">
+                        <img src="components/assets/iconeMissao.png" alt="">
+                        <h2>Missão</h2>
+                        <p>Ajudar as pessoas e empresas em todo o mundo a concretizarem seu potencial máximo</p>
+                    </div>
+
+
+                    <div class="cardProposito">
+                        <img src="components/assets/iconeVisao.png" alt="">
+
+                        <h2>Visão</h2>
+                        <p>Ser conhecidos pelo nosso trabalho eficaz e honesto e ter os melhores e mais práticos softwares</p>
+                    </div>
+
+                    <div class="cardProposito">
+                        <img src="components/assets/iconeValores.png" alt="">
+
+                        <h2>Valores</h2>
+                        <p>Honestidade, Respeito, Praticidade, Fidelidade, Inovação, empatia e trabalho em equipe</p>
+                    </div>
+
+                </section>
+            </article>
         </section>
+        
 
     </main>
 </body>
+
 </html>

@@ -15,24 +15,22 @@ body{
 }
 
 
-
-.card-login > h1{
-    color: #FEFEFE;
-  
-}
-
 .login-email::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);
-    background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: 15%;
     background-position: left center;
-    text-align: center;
+    text-align: left;
+    background-repeat: no-repeat;
 }
 
 .login-senha::placeholder{
    background-image: url(../components/assets/LockKey.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    text-align: center;
+   background-size: 8%;
+   padding-left: 15%;
+   background-position: left center;
+   text-align: left;
+   background-repeat: no-repeat;
 }
 
 .login-direita{
@@ -45,12 +43,20 @@ body{
 
     flex-direction: column;
     /* padding: 30px 35px; */
-    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
 }
-
-.login-direita h1{
-    color: #fffff5;
+#formularioLogin h1{
+    color: #FEFEFE;
+    font-weight: 400;
+    font-size: 25px;
+}
+#formularioLogin img{
+    margin: auto;
+    /* background-color: #F5F5F5; */
+    display: flex;
+    justify-content: center;
 }
 
 .login-esquerda{
@@ -76,7 +82,8 @@ body{
 }
 
 .text-field > input{
-    width: 100%;
+    width: 90%;
+    height: 7vh;
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -96,19 +103,36 @@ body{
     color: #F2F2F2;
     /* text-align: initial ; */
 }
+.text-field input:focus{
+    background-color: #705885b6;
+    border: #ffd024af 1px solid;
+}  
 
-.btn-login{
+#btnLogin{
     width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 3vh auto;;
+}
+.btn-login{
+    width: 50%;
+    height: 7vh;
+    /* padding: 16px 0px;
+    margin: 25px; */
     border: none;
-    border-radius: 20px;
-    background-color: #FFD024;
+    border-radius: 15px;
+    background: linear-gradient(218deg, rgba(255, 200, 0, 0.822) 53%, rgba(0,0,0,1) 190%);
     outline: none;
-    font-weight: 300;
-    color:#F5F5F5;
+    font-weight: 400;
+    font-size: 20px;
+    color:#ececec;
     cursor: pointer;
-    box-shadow:0px 10px 40px -12px #FFD024;
+    box-shadow:0px 10px 40px -12px #ffd024a9;
+}
+.btn-login:hover{
+    transform: scale(1.09);
+    box-shadow: #3a3a3a 3px 3px 3px;
+    transition: all 0.5s;
 }
 
 .cadastrar{

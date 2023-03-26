@@ -50,33 +50,35 @@ include("../config/cadastrar.php")
 
 <body>
 
-    <div class="main-login">
-        <div class="login-esquerda">
-            <img src="../components/assets/imgCadastro.png" class="imagem-esquerda-login" alt="">
-        </div>
-        <div class="login-direita">
-            <form action="../config/cadastrar.php" method="POST">
+    <div class="main-cadastro">
+        <div class="cadastro-esquerda">
+            <form action="../config/cadastrar.php" method="POST" id="formCadastro">
                 <img src="../components/assets/logoVoidTech.png" alt="">
                 <h1>Cadastre-se</h1>
                 <div class="text-field">
                     <label for="nome">Nome</label>
-                    <input type="text" class="login-nome" name="nome" placeholder="Digite seu nome">
+                    <input type="text" class="cadastro-nome" name="nome" placeholder="Digite seu nome">
                 </div>
                 <div class="text-field">
                     <label for="email">Endereço de email</label>
-                    <input type="text" class="login-email" name="email" placeholder="Digite seu email">
+                    <input type="text" class="cadastro-email" name="email" placeholder="Digite seu email">
                 </div>
                 <div class="text-field">
-                    <label for="login-email">Confirme seu email</label>
-                    <input type="text" class="login-email" name="email-confirm" placeholder="Confirme seu email">
+                    <label for="cadastro-email">Confirme seu email</label>
+                    <input type="text" class="cadastro-email-confirmar" name="email-confirm" placeholder="Confirme seu email">
                 </div>
                 <div class="text-field">
                     <label for="Senha">Senha</label>
-                    <input type="password" class="login-senha" name="senha" placeholder="Senha">
+                    <input type="password" class="cadastro-senha" name="senha" placeholder="Senha">
                 </div>
-
-                <button type="submit" class="btn-login" name="btn-cadastrar">CADASTRAR</button>
+                <div id="btnCadastro">
+                    <button type="submit" class="btn-cadastro" name="btn-cadastrar">CADASTRAR</button>
+                </div>
             </form>
+
+        </div>
+        <div class="cadastro-direita">
+            <img src="../components/assets/imgCadastro.png" class="imagem-esquerda-cadastro" alt="">
         </div>
     </div>
 </body>
