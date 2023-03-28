@@ -39,6 +39,7 @@ session_start();
                     <li> <img src="../components/assets/multasIcon.png" alt=""> Multas</li>
                     <li> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li> <img src="../components/assets/mapaIcon.png" alt=""> Rotas</li>
+                    <li> <img src="../components/assets/CloudArrowUp.png" alt=""> Upload</li>
                 </ul>
             </section>
         </article>
