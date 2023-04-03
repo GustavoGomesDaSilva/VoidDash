@@ -12,7 +12,16 @@ body{
    justify-content: space-between;
    align-items: center;
 }
-
+#logoCadastro{
+    width: 20vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+}
+#logoCadastro img{
+    width: 80%;
+    height: 60%;
+}
 #formCadastro h1{
     color: #FEFEFE;
     font-weight: 400;

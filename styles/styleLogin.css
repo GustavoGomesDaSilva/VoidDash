@@ -14,6 +14,18 @@ body{
    /* background-color: #7B4BA1; */
 }
 
+#logoLogin{
+    width: 20vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #b3b3b334; */
+}
+#logoLogin img{
+    width: 80%;
+    height: 60%;
+}
 
 .login-email::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);

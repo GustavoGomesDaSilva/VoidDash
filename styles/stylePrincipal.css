@@ -12,7 +12,7 @@ main{
 }
 #homeTopo{
     background-image: url("../components/assets/fundoHome.png");
-    background-size: 100vw 85vh;
+    background-size: 100vw 75vh;
     background-repeat: no-repeat;
 }
 header{
@@ -21,28 +21,44 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    height: auto;;
+    height: auto;
 }
 header ul{
     list-style: none;
     display: flex;
     justify-content: flex-end;
     width: 50%;
-    margin-left: 8vw;
+    margin-right: 5vw;
+
 }
-header ul li{
+header ul li a{
     font-size: 20px;
     margin: 0 2vw;
+    text-decoration: none ;
 }
-header ul li:hover{
+header ul li a{
+    text-decoration: none ; 
+    color: #242424;
+
+}
+header ul li a:hover{
     cursor: pointer;
     color: #A200EE;
     transform: scale(1.15);
-
     transition: all 1s;
 }
 header #btnTopoContainer{
     width: 20%;
+}
+#logoTopo{
+    width: 15vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+}
+#logoTopo img{
+    width: 80%;
+    height: 60%;
 }
 .btnTopo{
     background: linear-gradient(218deg, rgba(255,199,0,1) 53%, rgba(0,0,0,1) 190%);
@@ -75,7 +91,9 @@ header #btnTopoContainer{
     width: 80%;
     height: 80%;
 }
-
+#helicoptero{
+    rotate: -10deg;
+}
 .txtRoxo{
     color: #A200EE;
 }
@@ -90,7 +108,7 @@ header #btnTopoContainer{
 }
 #txtCentral{
     
-    width: 60%;
+    width: 64%;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -98,7 +116,7 @@ header #btnTopoContainer{
     justify-content: center;
 }
 #txtCentral p{
-    font-size: 47px;
+    font-size: 45px;
     font-weight: 580;
     width: 90%;
     text-align: center;
@@ -128,7 +146,8 @@ header #btnTopoContainer{
 }
 #imgsCarrosDireita img{
     width: 80%;
-    height: 80%;
+    height: 40%;
+    rotate: 17deg;
 }
 #sessaoServicos{
     /* background-color: #A200EE; */

@@ -7,7 +7,7 @@
 
 main{
 
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
     background-color: #FFFFF6;
     display: flex;
@@ -24,6 +24,7 @@ main{
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+
 }
 #topoPainel img{
     margin-top: 13px;
@@ -48,10 +49,10 @@ main{
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    height: 43vh;
+    height: 23vh;
     width: 100%;
     border-bottom: 1px solid #000;
-    padding-top: 4%;
+    padding-top: 7%;
 }
 #menuEsquerda #topoMenuEsquerda img{
     width: 50%;
@@ -59,6 +60,7 @@ main{
 }
 #menuEsquerda #topoMenuEsquerda p{
     margin: 5px 0;
+    font-size: 19px;
 }
 #menuEsquerda #topoMenuEsquerda #iconsTopEsquerda{
     width: 80%;
@@ -76,7 +78,7 @@ main{
 }
 #menuEsquerda #opcoesMenu{
     width: 100%;
-    height: 55vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,6 +101,16 @@ main{
     color: #727272;
     transition: all 0.3s;
 }
+#logoPainel{
+    width: 19vw;
+    height: 18vh;
+    display: flex;
+    align-items: flex-start;
+}
+#logoPainel img{
+    width: 80%;
+    height: 60%;
+}
 #menuEsquerda #opcoesMenu li img{
     margin-right: 5px;
 }
@@ -108,8 +120,17 @@ main{
 .txtLaranja{
     color: #FFC700;
 }
+#conteudoPrincipal{
+    width: 75vw;
+    height: auto;
+}
+#conteudoPrincipal #painlePrincipal{
+    width: 100%;
+    /* background-color: #A200EE; */
+    margin: auto;
+}
 #conteudoPrincipal #painlePrincipal #txtCentral{
-    width: 60%;
+    width: 55%;
     height: 70vh;
     display: flex;
     flex-direction: column;

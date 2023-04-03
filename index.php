@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/stylePrincipal.css">
 
-    <link rel="shortcut icon" href="components/assets/LogoVoidTech.png" type="image/x-icon">
+    <link rel="shortcut icon" href="components/assets/novaLogo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
@@ -17,36 +17,40 @@
 <body>
     <main>
         <div id="homeTopo">
-            <header>
-                <a href="https://void-tech-empresa.vercel.app/" target="_blank"><img src="components/assets/LogoVoidTech.png" alt=""></a>
-                <ul>
-                    <li>Home</li>
-                    <li>Serviços</li>
-                    <li>Sobre Nós</li>
-                    <li>Contato</li>
-                </ul>
-                <div id="btnTopoContainer">
-                    <a href="views/login.php"><button class="btnTopo">Login</button></a>
-                    <a rel="" href="views/cadastro.php"><button class="btnTopo">Cadastro</button></a>
-                </div>
-            </header>
-            <section id="conteudoHomeTopo">
-                <div id="imgsCarrosEsquerda">
-                    <img src="components/assets/caminhao3d 1.png" alt="">
-                    <img src="components/assets/helicoptero 1.png" alt="">
-                </div>
-                <div id="txtCentral">
-                    <p>V<span class="txtRoxo">o</span><span class="txtLaranja">i</span>dDash<br>
-                        Nunca foi tão <span class="txtRoxo">fácil</span>
-                        controlar sua <span class="txtRoxo">frota</span></p>
-                    <a href="views/cadastro.php"><button id="btnPrincipal">Comece Agora</button></a>
-                </div>
-                <div id="imgsCarrosDireita">
-                    <img src="components/assets/caminhao4.png" alt="">
-                    <img src="components/assets/carrinho1.png" alt="">
-                </div>
-            </section>
+            <a name="Home">
+                <header>
+                    <div id="logoTopo">
+                        <a href="https://void-tech-empresa.vercel.app/" target="_blank"><img src="components/assets/novaLogo.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Servicos">Serviços</a></li>
+                        <li><a href="#SobreNos">Sobre Nós</a></li>
+                        <li><a href="#Contato">Contato</a></li>
+                    </ul>
+                    <div id="btnTopoContainer">
+                        <a href="views/login.php"><button class="btnTopo">Login</button></a>
+                        <a rel="" href="views/cadastro.php"><button class="btnTopo">Cadastro</button></a>
+                    </div>
+                </header>
+                <section id="conteudoHomeTopo">
+                    <div id="imgsCarrosEsquerda">
+                        <img src="components/assets/caminhao3d 1.png" alt="">
+                        <img src="components/assets/helicoptero 1.png" id="helicoptero" alt="">
+                    </div>
+                    <div id="txtCentral">
+                        <p>V<span class="txtRoxo">o</span><span class="txtLaranja">i</span>dDash<br>
+                            Nunca foi tão <span class="txtRoxo">fácil</span>
+                            controlar sua <span class="txtRoxo">frota</span></p>
+                        <a href="views/cadastro.php"><button id="btnPrincipal">Comece Agora</button></a>
+                    </div>
+                    <div id="imgsCarrosDireita">
+                        <img src="components/assets/caminhao4.png" alt="">
+                        <!-- <img src="components/assets/carrinho1.png" alt=""> -->
+                    </div>
+                </section>
         </div>
+        <a name="Servicos"></a>
         <section id="sessaoServicos">
             <h1 id="tituloServicos"><span class="tituloRoxo">Nossos</span><span class="tituloAmarelo"> Serviços</span></h1>
             <p class="subTitulo">Tenha total controle sobre sua frota com nossa vasta gama de serviços</p>
@@ -96,6 +100,7 @@
             </article>
         </section>
         <!-- fim servicos -->
+        <a name="SobreNos"></a>
         <section id="sobreNos">
             <h1 id="tituloSobre"><span class="tituloRoxo">Sobre Nós</span></h1>
             <article id="conteudoSobre">
@@ -138,7 +143,7 @@
                 </section>
             </article>
         </section>
-        
+
 
     </main>
 </body>
