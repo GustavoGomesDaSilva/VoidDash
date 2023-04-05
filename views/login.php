@@ -34,10 +34,11 @@
                        <input type="password" class="login-senha" name="senha" placeholder="Senha">
                    </div>
                    <div class="lembrar">
-                       <!-- <input type="checkbox" id="checkbox"><label for="checkbox" id="lembrar">Lembrar-se de mim</label> -->
+                       <input type="checkbox" id="checkbox"><label for="checkbox" id="lembrar">Lembrar-se de mim</label>
                    </div>
                    <div id="btnLogin">
                        <button class="btn-login" type="submit" name="btn-login">Fazer login</button>
+
                    </div>
                </form>
                <!-- <div class="esqueceu-senha"><a href="#"> Esqueceu sua Senha</a></div> -->

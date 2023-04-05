@@ -1,6 +1,6 @@
 <?php
+require('../config/sec.php');
 
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,14 +18,13 @@ session_start();
 
     <title>VoidDash</title>
 </head>
-
 <body>
     
     <main>
         <article id="menuEsquerda">
             <section id="topoMenuEsquerda">
                 <!-- <img src="../components/assets/imgExemploPerfil.png" alt=""> -->
-                <p id="nomeUsuario" name="nomeUsuario">Marcos Oliveira</p>
+                <p id="nomeUsuario" name="nomeUsuario"><?php echo $_SESSION['user_nome'] ?></p>
                 <!-- <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p> -->
                 <div id="iconsTopEsquerda">
                     <a href="../config/logout.php"><img src="../components/assets/sairIcon.png" alt=""></a>
