@@ -41,7 +41,7 @@
 
                    </div>
                </form>
-               <!-- <div class="esqueceu-senha"><a href="#"> Esqueceu sua Senha</a></div> -->
+               <div class="esqueceu-senha"><a href="#"> Esqueceu a Senha?</a></div>
                <div class="cadastrar"><a href="cadastro.php">Não Possui Conta: Cadastre-se Agora</div>
            </div>
        </div>

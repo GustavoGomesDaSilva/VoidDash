@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO tb_funcionarios (`email`, `nome`, `senha`)
           VALUES ('$email', '$nome', '$hash_senha')";
 
-  if (!mysqli_query($conn, $sql)) {
+  if (mysqli_query($conn, $sql)) {
       echo "Funcionário cadastrado com sucesso!";
       print "<script>location.href='../views/areaDeControlePrincipal.php';</script>";
   } else {
