@@ -7,7 +7,7 @@
 
 main{
     width: 100%;
-    height: 100vh;
+    height: auto;
     /* background-color: aqua; */
 }
 #homeTopo{
@@ -51,7 +51,7 @@ header #btnTopoContainer{
     width: 20%;
 }
 #logoTopo{
-    width: 15vw;
+    width: 20vw;
     height: 18vh;
     display: flex;
     align-items: center;
@@ -69,6 +69,7 @@ header #btnTopoContainer{
     font-weight: 500;
     font-size: 18px;
     box-shadow: #c5c5c5 3px 3px 3px;
+    cursor: pointer;
 }
 .btnTopo:hover{
     transform: scale(1.1);
@@ -131,6 +132,7 @@ header #btnTopoContainer{
     font-weight: 500;
     font-size: 18px;
     box-shadow: #c5c5c5 3px 3px 3px;
+    cursor: pointer;
 }
 #txtCentral #btnPrincipal:hover{
     transform: scale(1.1);
@@ -293,7 +295,7 @@ header #btnTopoContainer{
 
 #sobreNos{
     width: 98vw;
-    height: 98vh;
+    height: auto    ;
     margin-top: 8vh;
 }
 #sobreNos #tituloSobre {
@@ -354,7 +356,7 @@ header #btnTopoContainer{
 #propositos section .cardProposito {
     display: inline-block;
     width: 30%;
-    height: 50vh;
+    height: 57vh;
     margin: 10px;    
     border-radius: 5px;
     padding: 20px;
@@ -364,11 +366,48 @@ header #btnTopoContainer{
 }
 #propositos section .cardProposito img{
     width: 40%;
-    height: 47%;
-    margin-top: -11vh;
+    height: 43%;
+    margin-top: -14vh;
 }
 #propositos section .cardProposito h2 {
     margin-top: 0;
     color: #7B4BA1;
     margin-bottom: 3vh;
+}
+
+footer{
+    width: 90%;
+    height: 25vh;
+    background-color: #2A0031;
+    margin-top: 18vh;
+    padding:  3% 5%;
+    color: #f2f2f2;
+}
+footer #footerTopo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-bottom: #f2f2f2 solid 1px;
+}
+footer #footerTopo img{
+    width: 16vw;
+    height: 12vh;
+}
+footer #footerTopo #footerDireita a{
+    text-decoration: none;
+    color: #f2f2f2;
+}
+footer #footerTopo #footerDireita {
+    width: 25vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    /* background-color: #7B4BA1; */
+}
+footer #footerTopo #footerDireita img{
+    width: 4vw;
+    height: 6vh;
 }

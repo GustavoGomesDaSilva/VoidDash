@@ -144,7 +144,21 @@
             </article>
         </section>
 
-
+        <footer>
+            <section id="footerTopo">
+                <div>
+                    <img src="components/assets/novaLogo.png" alt="">
+                </div>
+                <div id="footerDireita">
+                    <a href="#Home">Home ^</a>
+                    <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img src="components/assets/GitHub.png" alt="logo do GitHub"></a>
+                    <a href="https://linktr.ee/voiddash" target="_blank"><img src="components/assets/LinkedInIcon.png" alt=""></a>
+                </div>
+            </section>
+            <section>
+                <p>Copyrigth © 2023 VoidTech. Todos os direitos reservados</p>
+            </section>
+        </footer>
     </main>
 </body>
 
