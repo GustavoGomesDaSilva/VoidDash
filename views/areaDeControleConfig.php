@@ -28,7 +28,7 @@
                     <img src="../components/assets/configIcon.png" alt="">
                 </div>
             </section>
-            <section id="opcoesMenu">
+            <section id="opcoesMenu"> 
                 <ul>
                     <li> <img src="../components/assets/graficIcon.png" alt=""> Relatório</li>
                     <li> <img src="../components/assets/manutencaoIcon.png" alt=""> Manutenção</li>
@@ -45,7 +45,7 @@
             <article id="painlePConfig">
                 <form action="" method="get">
                     Nome: <input type="text" name="nome" id="nome">
-                    email: <input type="text" name="email" id="email">
+                    Email: <input type="text" name="email" id="email">
 
                     <button id="btnSalvar">Salvar Alterações</button>
 

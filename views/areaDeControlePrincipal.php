@@ -1,5 +1,4 @@
-<?php
-require('../config/sec.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -39,6 +38,12 @@ require('../config/sec.php');
                     <li> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li> <img src="../components/assets/mapaIcon.png" alt=""> Rotas</li>
                     <li> <img src="../components/assets/CloudArrowUp.png" alt=""> Upload</li>
+                  <form method="POST" action="processa.php" enctype="multipart/form-data">
+                  <input type="file" name="arquivo">
+                  <input type="submit" value="Enviar">
+                  </form>
+
+                    
                 </ul>
             </section>
         </article>

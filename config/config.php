@@ -2,7 +2,7 @@
 
 
 $host = "localhost";
-$nome_db = "bd_cadastro";
+$nome_db = "voiddash";
 $user = "root";
 $password = "";
 
