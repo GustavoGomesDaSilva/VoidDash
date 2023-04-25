@@ -73,7 +73,7 @@ include("../config/config.php");
 				echo "<hr>";
 
                 //Inserir o usuário no BD
-                $result_usuario = "INSERT INTO tb_planilha (locadora, lote, data_limite, data_infracao, hora, ait, placa, login_condutor,condutor, epo, supervisor, cod_infracao, descricao, valor, pontos, fator_multa, assinou)
+                $result_usuario = "INSERT INTO tb_planilhas (locadora, lote, data_limite, data_infracao, hora, ait, placa, login_condutor,condutor, epo, supervisor, cod_infracao, descricao, valor, pontos, fator_multa, assinou)
                 VALUES ('$locadora', '$lote', '$data_limite', '$data_infracao', '$hora', '$ait', '$placa', '$login', '$condutor', '$epo', '$supervisor', '$cod_infracao', '$descricao', '$valor', '$pontos', '$fator_multa', '$assinou')";
                 
 				$resultado_usuario = mysqli_query($conn, $result_usuario);
@@ -81,6 +81,6 @@ include("../config/config.php");
 				
 			}
 			$primeira_linha = false;
-		}
+		}	
 	}
 ?>

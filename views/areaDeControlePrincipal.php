@@ -1,6 +1,9 @@
+<?php
 
-
+include("../config/config.php");
+include("../config/sec.php")
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
