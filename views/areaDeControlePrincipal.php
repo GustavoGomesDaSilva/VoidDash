@@ -20,8 +20,9 @@ include("../config/sec.php")
 
     <title>VoidDash</title>
 </head>
+
 <body>
-    
+
     <main>
         <article id="menuEsquerda">
             <section id="topoMenuEsquerda">
@@ -29,42 +30,138 @@ include("../config/sec.php")
                 <p id="nomeUsuario" name="nomeUsuario"><?php echo $_SESSION['user_nome'] ?></p>
                 <!-- <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p> -->
                 <div id="iconsTopEsquerda">
-                    <a href="../config/logout.php"><img src="../components/assets/sairIcon.png" alt=""></a>
+                    <a href="../config/logout.php"><img src="../components/assets/SignOut.svg" alt=""></a>
                     <a href="areaDeControleConfig.php"><img src="../components/assets/configIcon.png" alt=""></a>
                 </div>
             </section>
             <section id="opcoesMenu">
                 <ul>
-                    <li> <img src="../components/assets/graficIcon.png" alt=""> Relatório</li>
-                    <li> <img src="../components/assets/manutencaoIcon.png" alt=""> Manutenção</li>
-                    <li> <img src="../components/assets/multasIcon.png" alt=""> Multas</li>
-                    <li> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
-                    <li> <img src="../components/assets/mapaIcon.png" alt=""> Rotas</li>
-                    <li> <img src="../components/assets/CloudArrowUp.png" alt=""> Upload</li>
-                  <form method="POST" action="processa.php" enctype="multipart/form-data">
-                  <input type="file" name="arquivo">
-                  <input type="submit" value="Enviar">
-                  </form>
+                    <li id="areaRegistros"> <img src="../components/assets/graficIcon.png" alt=""> Registros</li>
 
-                    
+                    <li id="areaSinistros"> <img src="../components/assets/multasIcon.png" alt=""> Sinistros</li>
+                    <li id="areaMotoristas"> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
+                    <li id="areaCarros"> <img src="../components/assets/carIcon.png" alt=""> Carros</li>
+                    <div id="btnUpload">
+                        <form method="POST" action="processa.php" enctype="multipart/form-data">
+                            <li> <img src="../components/assets/CloudArrowUp.png" alt=""> <input type="file" name="arquivo"></li>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </div>
+
+
+
+
                 </ul>
             </section>
         </article>
         <div id="conteudoPrincipal">
-            <header id="topoPainel">
+            <div id="topoPainel">
                 <div id="logoPainel">
                     <img src="../components/assets/novaLogo.png" alt="">
                 </div>
-            </header>
+            </div>
             <article id="painlePrincipal">
                 <div id="txtCentral">
                     <p>V<span class="txtRoxo">o</span><span class="txtLaranja">i</span>dDash<br>
-                    Nunca foi tão <span class="txtRoxo">fácil</span>
-                    controlar sua <span class="txtRoxo">frota</span></p>
+                        Nunca foi tão <span class="txtRoxo">fácil</span>
+                        controlar sua <span class="txtRoxo">frota</span></p>
                 </div>
+                
+                <article id="registros" style="display: none;">
+                    <section  >
+                        Registros
+                    </section>
+                </article>
+
+                <section id="sinistros" style="display: none">
+                    <article >
+                        Sinistros
+                    </article>
+                </section>
+
+                <section id="motoristas" style="display: none">
+                    <article >
+                        Motoristas
+                    </article>
+                </section>
+
+                <section id="carros" style="display: none">
+                    <article >
+                        Carros
+                    </article>
+                </section>
             </article>
         </div>
     </main>
 </body>
 
 </html>
+<script>
+    var Principal = document.getElementById("txtCentral");
+    var registros = document.getElementById("registros");
+    var sinistros = document.getElementById("sinistros");
+    var motoristas = document.getElementById("motoristas");
+    var carros = document.getElementById("carros");
+
+    var areaRegistros = document.getElementById("areaRegistros");
+    var areaSinistros = document.getElementById("areaSinistros");
+    var areaMotoristas = document.getElementById("areaMotoristas");
+    var areaCarros = document.getElementById("areaCarros");
+
+    // Adicionar um evento de clique a cada botão
+    areaRegistros.addEventListener("click", function() {
+        registros.style.display = "block";
+        Principal.style.display = "none";
+        sinistros.style.display = "none";
+        motoristas.style.display = "none";
+        carros.style.display = "none";
+
+        Principal.classList.remove("fade");
+        sinistros.classList.remove("fade");
+        motoristas.classList.remove("fade");
+        carros.classList.remove("fade");
+        registros.classList.add("fade");
+    });
+
+    areaSinistros.addEventListener("click", function() {
+        registros.style.display = "none";
+        Principal.style.display = "none";
+        sinistros.style.display = "block";
+        motoristas.style.display = "none";
+        carros.style.display = "none";
+
+        Principal.classList.remove("fade");
+        sinistros.classList.add("fade");
+        motoristas.classList.remove("fade");
+        carros.classList.remove("fade");
+        registros.classList.remove("fade");
+    });
+
+    areaMotoristas.addEventListener("click", function() {
+        registros.style.display = "none";
+        Principal.style.display = "none";
+        sinistros.style.display = "none";
+        motoristas.style.display = "block";
+        carros.style.display = "none";
+
+        Principal.classList.remove("fade");
+        sinistros.classList.remove("fade");
+        motoristas.classList.add("fade");
+        carros.classList.remove("fade");
+        registros.classList.remove("fade");
+    });
+
+    areaCarros.addEventListener("click", function() {
+        registros.style.display = "none";
+        Principal.style.display = "none";
+        sinistros.style.display = "none";
+        motoristas.style.display = "none";
+        carros.style.display = "block";
+
+        Principal.classList.remove("fade");
+        sinistros.classList.remove("fade");
+        motoristas.classList.remove("fade");
+        carros.classList.add("fade");
+        registros.classList.remove("fade");
+    });
+</script>
