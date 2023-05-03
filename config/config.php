@@ -1,8 +1,7 @@
 <?php
 
-
 $host = "localhost";
-$nome_db = "bd_cadastro";
+$nome_db = "bd_voiddash";
 $user = "root";
 $password = "";
 

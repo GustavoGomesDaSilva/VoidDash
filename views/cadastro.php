@@ -2,35 +2,6 @@
 include("../config/config.php");
 include("../config/cadastrar.php")
 
-// $nome = mysqli_real_escape_string($conn, trim($_POST['nome']));
-// $email = mysqli_real_escape_string($conn, trim($_POST['email']));
-// $senha = mysqli_real_escape_string($conn, trim(md5($_POST['senha'])));
-
-// $sql = "select count(*) as total from email where email = '$email'";
-//  $result = mysqli_query($conn,$sql);
-//  $row = mysqli_fetch_assoc($result);
-
-//  if($row['total'] == 1) {
-//     $_SESSION['email_existe'] = true;
-//     print "<script>alert('Email existente em nosso banco de dados');</script>";
-//     print "<script>location.href='cadastro.php';</script>";
-//     exit;
-
-//  }
-
-//  $sql = "INSERT INTO tb_funcionarios (email, nome, senha) VALUES (`$email`, `$nome`, `$senha`)";
-
-//  if($conn->query($sql) === TRUE) {
-//      $_SESSION['status-cadastro'] = true;
-//  }
-
-//  $conn->close();
-
-// header('Location: cadastro.php');
-
-
-
-
 ?>
 
 <!DOCTYPE html>
