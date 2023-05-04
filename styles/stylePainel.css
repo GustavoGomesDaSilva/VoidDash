@@ -40,6 +40,8 @@ main{
     height: 100vh;
     background-color: #fff;
     /* background-color: aqua; */
+    position: absolute;
+    position: fixed;
     box-shadow: 10px 3px 21px rgb(92, 92, 92);
 
 
@@ -182,8 +184,9 @@ main{
     color: #FFC700;
 }
 #conteudoPrincipal{
-    width: 75vw;
+    width: 80vw;
     height: auto;
+    margin-left: 18.7vw;
 }
 #conteudoPrincipal #painlePrincipal{
     width: 100%;
