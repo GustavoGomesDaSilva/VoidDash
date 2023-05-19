@@ -3,6 +3,7 @@
     border: 0;
     padding: 0;
     font-family: 'Poppins', sem serifa;
+    scroll-behavior: smooth;
 }
 
 main{
@@ -41,6 +42,27 @@ header ul li a{
     color: #242424;
 
 }
+header ul li:hover{
+    transform: translateY(-0.2rem);
+
+}
+header ul li:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 0;
+    height: 100%;
+    border-bottom: solid 2px #A200EE;
+    transition: width 0.3s, background-color 0.3s;
+    z-index: -1;
+}
+header ul li:hover::before{
+    width: 90%;
+    border-bottom: solid 2px #A200EE;
+    margin: auto;
+
+}
 header ul li a:hover{
     cursor: pointer;
     color: #A200EE;
@@ -74,7 +96,8 @@ header #btnTopoContainer{
 .btnTopo:hover{
     transform: scale(1.1);
     box-shadow: #3a3a3a 3px 3px 3px;
-    transition: all 0.3s;
+    transition: all 0.5s;
+    color: #2A0031;
 }
 #conteudoHomeTopo{
     display: flex;
@@ -139,6 +162,7 @@ header #btnTopoContainer{
     font-size: 19px;
     box-shadow: #3a3a3a 3px 3px 3px;
     transition: all 0.3s;
+    color: #2A0031;
 }
 #imgsCarrosDireita{
     width: 20%;
@@ -156,7 +180,10 @@ header #btnTopoContainer{
     width: 98vw;
     height: auto;
     margin: 0;
-    margin-top: 15vh;
+    margin-top: 10vh;
+}
+#sessaoServicos article{
+    line-height: 35px;
 }
 #sessaoServicos #tituloServicos{
     text-align: center;
@@ -217,6 +244,11 @@ header #btnTopoContainer{
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+#cartaoDois #imgCardDois img{
+    width: 75%;
+    height: 75%;
 }
 
 #cartaoDois #txtCardDois{
@@ -250,11 +282,11 @@ header #btnTopoContainer{
     width: 43%;
     height: 90vh;
     box-shadow: 0px 0px 24px 0px rgba(115,115,115,1);
-
+    /* background-color: yellowgreen; */
 }
 #imgCardVerticalUm{
     width: 100%;
-    height: 55%;
+    height: 40%;
     background: linear-gradient(180deg, rgba(54,4,94,0.29) 0%, rgba(255,199,0,0.42) 100%, rgba(0,0,0,1) 190%);
     display: flex;
     justify-content: center;;
@@ -263,6 +295,8 @@ header #btnTopoContainer{
     margin: auto;
     margin-top: 4vh;
     width: 88%;
+    /* background-color: #7B4BA1; */
+    height: auto;
 }
 .txtCardVertical h5{
     text-align: center;
@@ -273,7 +307,7 @@ header #btnTopoContainer{
 
 .CardVertical .txtCardVertical a{
     color: rgb(68, 149, 214);
-    margin-top: 14vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: flex-start;
     align-self: flex-start;
@@ -282,14 +316,14 @@ header #btnTopoContainer{
 
 #imgCardVerticalDois{
     width: 100%;
-    height: 55%;
+    height: 40%;
     background: linear-gradient(34deg, rgba(240,230,140,0.4) 0%, rgba(216,185,255,0.5) 100%, rgba(0,0,0,1) 190%);
     display: flex;
     justify-content: center;;
     align-items: center;;
 }
 #imgCardVerticalDois img{
-    width: 75%;
+    width: 60%;
     height: 75%;
 }
 
@@ -408,6 +442,6 @@ footer #footerTopo #footerDireita {
     /* background-color: #7B4BA1; */
 }
 footer #footerTopo #footerDireita img{
-    width: 4vw;
-    height: 6vh;
+    width: 2.8vw;
+    height: 5vh;
 }

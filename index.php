@@ -17,7 +17,7 @@
 <body>
     <main>
         <div id="homeTopo">
-            <a name="Home">
+            <a name="Home"></a>
                 <header>
                     <div id="logoTopo">
                         <a href="https://void-tech-empresa.vercel.app/" target="_blank"><img src="components/assets/novaLogo.png" alt=""></a>
@@ -60,7 +60,7 @@
                 </div>
                 <div id="txtCardUm">
                     <h2>Controle da Forta</h2>
-                    <p>loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem</p>
+                    <p>O VoidDash oferece relatórios detalhados e personalizáveis sobre o desempenho dos motoristas, tempos de entrega e eficiência de combustível. Essas informações permitem identificar áreas de melhoria e otimizar a operação da frota com base em dados.</p>
                     <a href="views/login.php">Saiba Mais -></a>
                 </div>
             </article>
@@ -68,8 +68,8 @@
             <article id="cartaoDois">
 
                 <div id="txtCardDois">
-                    <h2>Controle da Forta</h2>
-                    <p>loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem</p>
+                    <h2>Gerenciamento</h2>
+                    <p>O VoidDash oferece relatórios detalhados e personalizáveis sobre o desempenho dos motoristas, tempos de entrega e eficiência de combustível. Essas informações permitem identificar áreas de melhoria e otimizar a operação da frota com base em dados.</p>
                     <a href="views/login.php">Saiba Mais -></a>
                 </div>
                 <div id="imgCardDois">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="txtCardVertical">
                         <h5>Controle Financeiro</h5>
-                        <p>Controle suas multas, impostos e finanças gerais</p>
+                        <p>Oferece um controle financeiro eficiente, permitindo análise detalhada dos gastos com combustível, manutenção e outros custos operacionais para as frotas da sua empresa.</p>
                         <a href="views/login.php">Saiba Mais -></a>
                     </div>
                 </section>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="txtCardVertical">
                         <h5>Manutenção</h5>
-                        <p>Saiba o estado dos veículos de sua Forta</p>
+                        <p>Permite que os veículos da frota estejam em boas condições, reduzindo o risco de falhas mecânicas e aumentando a segurança operacional.</p>
                         <a href="views/login.php">Saiba Mais -></a>
                     </div>
                 </section>
@@ -144,6 +144,7 @@
             </article>
         </section>
 
+        <a name="Contato"></a>
         <footer>
             <section id="footerTopo">
                 <div>
