@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../importCarros.php" method="post">
+    <form action="../importMotoristas.php" method="post">
         <input type="file" name="xlsx" >
         <input type="submit" value="enviar">
     </form>

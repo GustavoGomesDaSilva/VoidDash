@@ -18,16 +18,25 @@ foreach ($sheet->getRowIterator() as $row) {
     $carro = $sheet->getCellByColumnAndRow(4, $row->getRowIndex())->getValue();
     $modelo = $sheet->getCellByColumnAndRow(5, $row->getRowIndex())->getValue();
     $cor = $sheet->getCellByColumnAndRow(6, $row->getRowIndex())->getValue();
+    
+    
+    if(strlen($placa) < 7 || strlen($placa) >= 9){
+        $placa = NULL;
+    }
 
 
-    $sql = "INSERT INTO `carros` (`placa`, `locadora`, `marca`, `carro`, `modelo`, `cor`, `ativo`) 
-            VALUES ('$placa', '$locadora', '$marca', '$carro', '$modelo', '$cor', NULL)";
+    if($placa != NULL){
+        $sql = "INSERT INTO `carros` (`placa`, `locadora`, `marca`, `carro`, `modelo`, `cor`, `ativo`) 
+        VALUES ('$placa', '$locadora', '$marca', '$carro', '$modelo', '$cor', NULL)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Dados adicionados ao banco de dados com sucesso.";
+    echo "Dados adicionados ao banco de dados com sucesso.";
     } else {
-        echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
+    echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
+     }
     }
+
+
 }
 
 $conn->close();
