@@ -35,21 +35,21 @@ foreach ($sheet->getRowIterator() as $row) {
     // strval($matricula);
     // var_dump($matricula);
     // var_dump($nome);
-    //var_dump($dtNasc);
+    var_dump($dtNasc);
     // var_dump($cnh);
 
     
 
-    if($matricula != NULL){
-        $sql = "INSERT INTO `motoristas` (`matricula`, `nome`, `cnh`, `dtNasc`) 
-        VALUES ('$matricula', '$nome', '$cnh', '$dtNasc')";
+    // if($matricula != NULL){
+    //     $sql = "INSERT INTO `motoristas` (`matricula`, `nome`, `cnh`, `dtNasc`) 
+    //     VALUES ('$matricula', '$nome', '$cnh', '$dtNasc')";
 
-    if($conn->query($sql) === TRUE) {
-    echo "Dados adicionados ao banco de dados com sucesso.";
-    } else {
-    echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
-     }
-    }
+    // if($conn->query($sql) === TRUE) {
+    // echo "Dados adicionados ao banco de dados com sucesso.";
+    // } else {
+    // echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
+    //  }
+    // }
 
 
 }
