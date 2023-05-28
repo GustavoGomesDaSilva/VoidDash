@@ -2,6 +2,19 @@
 
 include("../config/config.php");
 
+$sql_motoristas = "SELECT * FROM motoristas ORDER BY matricula DESC";
+$result_motoristas = $conn->query($sql_motoristas);
+
+$sql_carros = "SELECT * FROM carros ORDER BY locadora";
+$result_carros = $conn->query($sql_carros);
+
+$sql_registros = "SELECT * FROM registros INNER JOIN `motoristas` on `registros`.`matricula` = `motoristas`.`matricula` 
+INNER JOIN `carros` on `registros`.`placa` = `carros`.`placa`  order by `idRegistro` desc ";
+
+$result_registros = $conn->query($sql_registros);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +30,11 @@ include("../config/config.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
+    
+    
 
     <title>VoidDash</title>
 </head>
-
 <body>
 
     <main>
@@ -37,7 +51,6 @@ include("../config/config.php");
             <section id="opcoesMenu">
                 <ul>
                     <li id="areaRegistros"> <img src="../components/assets/graficIcon.png" alt=""> Registros</li>
-
                     <li id="areaSinistros"> <img src="../components/assets/multasIcon.png" alt=""> Sinistros</li>
                     <li id="areaMotoristas"> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li id="areaCarros"> <img src="../components/assets/carIcon.png" alt=""> Carros</li>
@@ -47,10 +60,6 @@ include("../config/config.php");
                             <input type="submit" value="Enviar">
                         </form>
                     </div>
-
-
-
-
                 </ul>
             </section>
         </article>
@@ -69,7 +78,41 @@ include("../config/config.php");
                 
                 <article id="registros" style="display: none;">
                     <section  >
-                        Registros
+                    <div class="m-5">
+                        <table class="carros-tabela">
+                            <thead>
+                                <tr>
+                                <th scope="col">ID Registro</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Matricula</th>
+                                <th scope="col">CNH</th>
+                                <th scope="col">Veiculo</th>
+                                <th scope="col">Placa</th>
+                                <th scope="col">Data da Saida</th>
+                                <th scope="col">Previsao do Retorno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                while($user_data = mysqli_fetch_assoc($result_registros))
+                                {
+                                    echo "<tr>";
+                                    echo"<td>" . $user_data ['idRegistro'] . "</td>";
+                                    echo"<td>" . $user_data ['nome'] . "</td>";
+                                    echo"<td>" . $user_data ['matricula'] . "</td>";
+                                    echo"<td>" . $user_data ['cnh'] . "</td>";
+                                    echo"<td>" . $user_data ['marca'] . $user_data ['carro'] . "</td>";
+                                    echo"<td>" . $user_data ['placa'] . "</td>";
+                                    echo"<td>" . $user_data ['dtInicioUso'] . "</td>";
+                                    echo"<td>" . $user_data ['dtFimUso'] . "</td>";
+                                    
+                                }
+                                ?>
+
+                            </tbody>
+                            </table>
+                        </div>
                     </section>
                 </article>
 
@@ -81,13 +124,70 @@ include("../config/config.php");
 
                 <section id="motoristas" style="display: none">
                     <article >
-                        Motoristas
+                        <div class="m-5">
+                        <table class="motoristas-tabela">
+                            <thead>
+                                <tr>
+                                <th scope="col">Matricula</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">CNH</th>
+                                <th scope="col">Data de Nascimento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                while($user_data = mysqli_fetch_assoc($result_motoristas))
+                                {
+                                    echo "<tr>";
+                                    echo"<td>" . $user_data ['matricula'] . "</td>";
+                                    echo"<td>" . $user_data ['nome'] . "</td>";
+                                    echo"<td>" . $user_data ['cnh'] . "</td>";
+                                    echo"<td>" . $user_data ['dtNasc'] . "</td>";
+                                }
+                                ?>
+
+                            </tbody>
+                            </table>
+                        </div>
                     </article>
                 </section>
 
                 <section id="carros" style="display: none">
                     <article >
-                        Carros
+                    <div class="m-5">
+                        <table class="carros-tabela">
+                            <thead>
+                                <tr>
+                                <th scope="col">Locadora</th>
+                                <th scope="col">Placa</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Carro</th>
+                                <th scope="col">Modelo</th>
+                                <th scope="col">Cor</th>
+                                <th scope="col">Ativo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                while($user_data = mysqli_fetch_assoc($result_carros))
+                                {
+                                    echo "<tr>";
+                                    echo"<td>" . $user_data ['locadora'] . "</td>";
+                                    echo"<td>" . $user_data ['placa'] . "</td>";
+                                    echo"<td>" . $user_data ['marca'] . "</td>";
+                                    echo"<td>" . $user_data ['carro'] . "</td>";
+                                    echo"<td>" . $user_data ['modelo'] . "</td>";
+                                    echo"<td>" . $user_data ['cor'] . "</td>";
+                                    echo"<td>" . $user_data ['ativo'] . "</td>";
+                                    
+                                }
+                                ?>
+
+                            </tbody>
+                            </table>
+                        </div>
                     </article>
                 </section>
             </article>

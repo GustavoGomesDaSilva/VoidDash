@@ -209,3 +209,11 @@ main{
     text-align: center;
     margin: 0 auto;
 }
+
+.motoristas-tabela{
+    margin-left: 300px;
+}
+
+.carros-tabela{
+    margin-left: 300px;
+}

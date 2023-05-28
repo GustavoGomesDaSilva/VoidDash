@@ -10,7 +10,7 @@
     <?php
     require('config/config.php');
     $registro_list = mysqli_query($conn, "select * from `registros` INNER JOIN `motoristas` on `registros`.`matricula` = `motoristas`.`matricula` 
-                                                                        INNER JOIN `carros` on `registros`.`placa` = `carros`.`placa`  order by `idRegistro` desc");
+INNER JOIN `carros` on `registros`.`placa` = `carros`.`placa`  order by `idRegistro` desc");
     while($registros_list = mysqli_fetch_array($registro_list)){
         echo "$registros_list[idRegistro]";
         echo "$registros_list[nome]";
