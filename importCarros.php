@@ -1,14 +1,15 @@
 <?php
 extract($_POST);
+extract($_FILES);
 
 require('config/config.php');
 require ('vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$planilha = 'C:/xampp/htdocs/voiddash/planilhas/carros.xlsx';
+$arquivo = $_FILES["xlsx"]["tmp_name"];
 
 $reader = IOFactory::createReader('Xlsx');
-$spreadsheet = $reader->load($planilha);
+$spreadsheet = $reader->load($arquivo);
 $sheet = $spreadsheet->getActiveSheet();
 
 foreach ($sheet->getRowIterator() as $row) {

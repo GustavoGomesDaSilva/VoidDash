@@ -2,22 +2,22 @@
 <?php
     @session_start();
 
-    $texto = $_GET['texto'];
+    $search = $_GET['search'];
 
-    require('connect.php');
+    require('config/config.php');
         if(!$search == ""){
-            $registro_list = mysqli_query($con, "SELECT * FROM registros INNER JOIN `motoristas` on `registros`.`matricula` = `motoristas`.`matricula` INNER JOIN `carros` on `registros`.`placa` = `carros`.`placa` WHERE `matricula` LIKE `%$search%` or `placa` LIKE `%$search%` or `dtInicio` LIKE `%$search%`");
+            $registro_list = mysqli_query($conn, "SELECT * FROM registros INNER JOIN `motoristas` ON `registros`.`matricula` = `motoristas`.`matricula` INNER JOIN `carros` ON `registros`.`placa` = `carros`.`placa` WHERE `registros`.`matricula` LIKE '%$search%' OR `registros`.`placa` LIKE '%$search%' OR `registros`.`dtInicioUso` LIKE '%$search%'");
             echo "<div class =\"box\">";
-            while($quadra = mysqli_fetch_array($quadras)){
+            while($registros_list = mysqli_fetch_array($registro_list)){
                 echo "<div class =\"sc\">";
-                echo "<p id= pag>$quadra[nome_local] </p>";
-                echo "<p id= pag>$quadra[desc_local] </p>";
-                echo "<p id= pag>$quadra[desc_categoria] </p>";
-                echo "<p id= pag>$quadra[rua]</p>";
-                echo "<p id= pag>$quadra[bairro]</p>";
-                echo "<p id= pag>$quadra[cidade]</p>";
-                echo "<p id= pag>$quadra[estado] </p>";
-                echo "<p id= pagimg><img src=$quadra[img1]></p>";
+                echo "<p id= pag>$registros_list[nome] </p>";
+                echo "<p id= pag>$registros_list[matricula] </p>";
+                echo "<p id= pag>$registros_list[cnh] </p>";
+                echo "<p id= pag>$registros_list[marca] $registros_list[carro]</p>";
+                echo "<p id= pag>$registros_list[placa]</p>";
+                echo "<p id= pag>$registros_list[dtInicioUso]</p>";
+                echo "<p id= pag>$registros_list[dtFimUso] </p>";
+                
                 // if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
                     
                 // }else{

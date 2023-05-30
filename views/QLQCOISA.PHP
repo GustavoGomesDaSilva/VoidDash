@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../importRegistros.php" method="post">
+    <form action="../importRegistros.php" method="post" enctype="multipart/form-data">
         <input type="file" name="xlsx" >
         <input type="submit" value="enviar">
     </form>

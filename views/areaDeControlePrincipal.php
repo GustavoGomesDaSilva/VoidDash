@@ -55,8 +55,8 @@ $result_registros = $conn->query($sql_registros);
                     <li id="areaMotoristas"> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li id="areaCarros"> <img src="../components/assets/carIcon.png" alt=""> Carros</li>
                     <div id="btnUpload">
-                        <form method="POST" action="processa.php" enctype="multipart/form-data">
-                            <li> <img src="../components/assets/CloudArrowUp.png" alt=""> <input type="file" name="arquivo"></li>
+                        <form method="POST" action="../importSinistros.php" enctype="multipart/form-data">
+                            <li> <img src="../components/assets/CloudArrowUp.png" alt=""> <input type="file" name="xlsx"></li>
                             <input type="submit" value="Enviar">
                         </form>
                     </div>

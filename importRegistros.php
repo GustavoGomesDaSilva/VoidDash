@@ -1,15 +1,20 @@
 <?php
 extract($_POST);
+extract($_FILES);
+
 
 require('config/config.php');
 require ('vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 
-$planilha = 'C:/xampp/htdocs/voiddash/planilhas/registros.xlsx';
+// var_dump($_FILES["xlsx"]["tmp_name"]);
+
+$arquivo = $_FILES["xlsx"]["tmp_name"];
+
 
 $reader = IOFactory::createReader('Xlsx');
-$spreadsheet = $reader->load($planilha);
+$spreadsheet = $reader->load($arquivo);
 $sheet = $spreadsheet->getActiveSheet();
 
 foreach ($sheet->getRowIterator() as $row) {
@@ -50,13 +55,18 @@ foreach ($sheet->getRowIterator() as $row) {
         VALUES ('$matricula', '$placa', '$dtInicioUso', '$dtFimUso')";
 
     if($conn->query($sql) === TRUE) {
-    echo "Dados adicionados ao banco de dados com sucesso.";
+        print "<script>alert('UPLOAD CONCLUÍDO COM SUCESSO!!!');</script>";
+        continue;
     } else {
-    echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
+     print "<script>alert('ERRO AO ADICIONAR DADOS AO BANCO DE DADOS' . );</script>";
+     echo $conn->error;
      }
     }
 
-
+    
 }
+header("Refresh: 0; url=views/areadecontroleprincipal.php");
+
+
 
 $conn->close();
