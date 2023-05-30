@@ -27,7 +27,7 @@ foreach ($sheet->getRowIterator() as $row) {
 
     if($placa != NULL){
         $sql = "INSERT INTO `carros` (`placa`, `locadora`, `marca`, `carro`, `modelo`, `cor`, `ativo`) 
-        VALUES ('$placa', '$locadora', '$marca', '$carro', '$modelo', '$cor', NULL)";
+        VALUES ('$placa', '$locadora', '$marca', '$carro', '$modelo', '$cor', 1)";
 
     if ($conn->query($sql) === TRUE) {
     echo "Dados adicionados ao banco de dados com sucesso.";

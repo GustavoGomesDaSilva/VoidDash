@@ -6,7 +6,7 @@
     $tresD = 259200;
     $dataF = date('Y-m-d', time()+$tresD);
    
-    $sql = "INSERT INTO `registros`( `matricula`, `placa`, `dtInicioUso`, `dtFmiUso`) VALUES ('$matricula','$placa','$dataH','$dataF')";
+    $sql = "INSERT INTO `registros`( `matricula`, `placa`, `dtInicioUso`, `dtFimUso`) VALUES ('$matricula','$placa','$dataH','$dataF')";
 
     if(mysqli_query($conn, $sql)){
         echo "funcionou!";
