@@ -1,6 +1,7 @@
 <?php
 
 include("../config/config.php");
+include("../config/sec.php");
 
 $sql_motoristas = "SELECT * FROM motoristas ORDER BY matricula DESC";
 $result_motoristas = $conn->query($sql_motoristas);

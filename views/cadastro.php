@@ -37,8 +37,8 @@ include("../config/cadastrar.php")
                     <input type="text" class="cadastro-email" name="email" placeholder="Digite seu email">
                 </div>
                 <div class="text-field">
-                    <label for="cadastro-email">Confirme seu email</label>
-                    <input type="text" class="cadastro-email-confirmar" name="email-confirm" placeholder="Confirme seu email">
+                    <label for="cadastro-email">Insira sua matricula</label>
+                    <input type="text" class="cadastro-email-confirmar" name="matricula" placeholder="Insira sua matricula">
                 </div>
                 <div class="text-field">
                     <label for="Senha">Senha</label>
