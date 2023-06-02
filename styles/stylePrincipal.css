@@ -83,12 +83,13 @@ header #btnTopoContainer{
     height: 60%;
 }
 .btnTopo{
-    background: linear-gradient(218deg, rgba(255,199,0,1) 53%, rgba(0,0,0,1) 190%);
+    background: linear-gradient(218deg, rgb(255, 209, 2) 13%, rgba(255, 241, 179, 0.733) 190%);
     width: 8vw;
     height: 6vh;
     border-radius: 15px;
-    color: #f2f2f2;
-    font-weight: 500;
+    color: #303030;
+    /* text-shadow: 2px 2px 2px black; */
+    font-weight: 600;
     font-size: 18px;
     box-shadow: #c5c5c5 3px 3px 3px;
     cursor: pointer;
@@ -97,7 +98,9 @@ header #btnTopoContainer{
     transform: scale(1.1);
     box-shadow: #3a3a3a 3px 3px 3px;
     transition: all 0.5s;
-    color: #2A0031;
+    color: #7B4BA1;
+    text-shadow: 0px 0px 0px;
+
 }
 #conteudoHomeTopo{
     display: flex;
@@ -147,12 +150,13 @@ header #btnTopoContainer{
     margin: 0 auto;
 }
 #txtCentral #btnPrincipal{
-    background: linear-gradient(218deg, rgba(255,199,0,1) 53%, rgba(0,0,0,1) 190%);
+    background: linear-gradient(218deg, rgb(255, 209, 2) 13%, rgba(255, 241, 179, 0.733) 190%);
     width: 18vw;
     height: 7vh;
     border-radius: 15px;
-    color: #f2f2f2;
-    font-weight: 500;
+    color: #303030;
+    /* text-shadow: 2px 2px 2px black; */
+    font-weight: 600;
     font-size: 18px;
     box-shadow: #c5c5c5 3px 3px 3px;
     cursor: pointer;
@@ -161,8 +165,10 @@ header #btnTopoContainer{
     transform: scale(1.1);
     font-size: 19px;
     box-shadow: #3a3a3a 3px 3px 3px;
-    transition: all 0.3s;
-    color: #2A0031;
+    transition: all 0.4s;
+    color: #7B4BA1;
+    text-shadow: 0px 0px 0px;
+
 }
 #imgsCarrosDireita{
     width: 20%;

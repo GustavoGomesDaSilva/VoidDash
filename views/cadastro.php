@@ -25,7 +25,7 @@ include("../config/cadastrar.php")
         <div class="cadastro-esquerda">
             <form action="../config/cadastrar.php" method="POST" id="formCadastro">
                 <div id="logoCadastro">
-                    <img src="../components/assets/novaLogo.png" alt="">
+                   <a href="../index.php"> <img src="../components/assets/novaLogo.png" alt=""></a>
                 </div>
                 <h1>Cadastre-se</h1>
                 <div class="text-field">

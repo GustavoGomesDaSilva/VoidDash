@@ -31,16 +31,16 @@ body{
 .cadastro-senha::placeholder{
     background-image: url(../components/assets/LockKey.png);
      background-repeat: no-repeat;
-     background-size: 7%;
-     padding-left: 15%;
+     background-size: 20px;
+     padding-left: 13%;
      background-position: left center;
      text-align: left;
  }
  .cadastro-nome::placeholder{
     background-image: url( ../components/assets/Businessman.png);
     background-repeat: no-repeat;
-    background-size: 8%;
-    padding-left: 15%;
+    background-size: 25px;
+    padding-left: 13%;
     background-position: left center;
     text-align: left;
 }
@@ -48,18 +48,19 @@ body{
  .cadastro-email::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
-    background-size: 8%;
-    padding-left: 15%;
+    background-size: 25px;
+    padding-left: 13%;
     background-position: left center;
     text-align: left;
 }
 .cadastro-email-confirmar::placeholder{
     background-image: url(../components/assets/EnvelopeSimple.png);
     background-repeat: no-repeat;
-    background-size: 8%;
-    padding-left: 15%;
+    background-size: 25px;
+    padding-left: 13%;
     background-position: left center;
     text-align: left;
+    /* margin-left: 50%; */
 }
 
 /* .cadastro-cargo::placeholder{
@@ -123,7 +124,7 @@ body{
     height: 7vh;
     border: none;
     border-radius: 7px;
-    padding: 0 15px;
+    padding: 0 1rem;
     background-color: #d4d4d475;
     color: #F2F2F2;
     font-size: 12pt;
