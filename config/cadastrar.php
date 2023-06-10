@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $senha = mysqli_real_escape_string($conn, trim($_POST['senha']));
    $hash_senha = password_hash($senha, PASSWORD_DEFAULT);
 
-           $sql = "INSERT INTO `tb_user` (`matricula`, `nome`, `email`, `senha`) VALUES ('$matricula', '$nome', '$email', '$hash_senha')";
+           $sql = "INSERT INTO `usuarios` (`matricula`, `nome`, `email`, `senha`) VALUES ('$matricula', '$nome', '$email', '$hash_senha')";
    
   // var_dump($matricula);
   // var_dump($nome);

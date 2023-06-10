@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $senha = mysqli_real_escape_string($conn, trim($_POST['senha']));
 
-    $sql = "SELECT * FROM tb_user WHERE email = '{$email}'";
+    $sql = "SELECT * FROM usuarios WHERE email = '{$email}'";
     $res = mysqli_query($conn, $sql);
 
     if ($res && mysqli_num_rows($res) > 0) {
