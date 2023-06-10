@@ -32,7 +32,10 @@ $result_registros = $conn->query($sql_registros);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
     
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
 
     <title>VoidDash</title>
 </head>
@@ -79,11 +82,11 @@ $result_registros = $conn->query($sql_registros);
                 
                 <article id="registros" style="display: none;">
                     <section  >
-                    <div class="m-5">
+                    <div class="m-5" style="width: 80%; margin:auto;" >
                         <table class="carros-tabela">
                             <thead>
                                 <tr>
-                                <th scope="col">ID Registro</th>
+                                <!-- <th scope="col">ID Registro</th> -->
                                 <th scope="col">Nome</th>
                                 <th scope="col">Matricula</th>
                                 <th scope="col">CNH</th>
@@ -99,7 +102,7 @@ $result_registros = $conn->query($sql_registros);
                                 while($user_data = mysqli_fetch_assoc($result_registros))
                                 {
                                     echo "<tr>";
-                                    echo"<td>" . $user_data ['idRegistro'] . "</td>";
+                                    // echo"<td>" . $user_data ['idRegistro'] . "</td>";
                                     echo"<td>" . $user_data ['nome'] . "</td>";
                                     echo"<td>" . $user_data ['matricula'] . "</td>";
                                     echo"<td>" . $user_data ['cnh'] . "</td>";
@@ -125,7 +128,7 @@ $result_registros = $conn->query($sql_registros);
 
                 <section id="motoristas" style="display: none">
                     <article >
-                        <div class="m-5">
+                        <div class="m-5" style="width: 80%; margin:auto;">
                         <table class="motoristas-tabela">
                             <thead>
                                 <tr>
@@ -156,7 +159,7 @@ $result_registros = $conn->query($sql_registros);
 
                 <section id="carros" style="display: none">
                     <article >
-                    <div class="m-5">
+                    <div class="m-5" style="width: 80%; margin:auto;">
                         <table class="carros-tabela">
                             <thead>
                                 <tr>
@@ -194,6 +197,59 @@ $result_registros = $conn->query($sql_registros);
             </article>
         </div>
     </main>
+    <script>
+        // $(document).ready(function() {
+        //     // Aplicar filtro na tabela de motoristas
+        //     $('.motoristas-tabela').DataTable();
+
+        //     // Aplicar filtro na tabela de carros
+        //     $('.carros-tabela').DataTable();
+        // });
+
+
+    $(document).ready(function() {
+        // Definir o idioma para português
+        $.extend($.fn.dataTable.defaults, {
+            language: {
+                "sEmptyTable": "Nenhum dado encontrado na tabela",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "_MENU_ resultados por página",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+                "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                },
+                "select": {
+                    "rows": {
+                        "_": "Selecionado %d linhas",
+                        "0": "Nenhuma linha selecionada",
+                        "1": "Selecionado 1 linha"
+                    }
+                }
+            }
+        });
+
+        // Aplicar filtro na tabela de motoristas
+        $('.motoristas-tabela').DataTable();
+
+        // Aplicar filtro na tabela de carros
+        $('.carros-tabela').DataTable();
+    });
+
+    </script>
 </body>
 
 </html>

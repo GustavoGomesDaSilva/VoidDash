@@ -223,3 +223,75 @@ main{
 .carros-tabela{
     margin-left: 300px;
 }
+
+
+
+/*  */
+
+
+
+/* Estilos para as tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos específicos para a tabela de motoristas */
+  table.motoristas-tabela {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  table.motoristas-tabela thead {
+    background-color: #f2f2f2;
+  }
+  
+  table.motoristas-tabela th,
+  table.motoristas-tabela td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table.motoristas-tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos específicos para a tabela de carros */
+  table.carros-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table.carros-tabela thead {
+    background-color: #f2f2f2;
+  }
+  
+  table.carros-tabela th,
+  table.carros-tabela td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table.carros-tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
