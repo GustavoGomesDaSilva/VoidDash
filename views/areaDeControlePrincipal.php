@@ -15,6 +15,8 @@ INNER JOIN `carros` on `registros`.`placa` = `carros`.`placa`  order by `idRegis
 $result_registros = $conn->query($sql_registros);
 
 
+$sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistro DESC");
+
 
 ?>
 
@@ -27,7 +29,7 @@ $result_registros = $conn->query($sql_registros);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/stylePainel.css">
 
-    <link rel="shortcut icon" href="../components/assets/novaLogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../components/assets/LogoVoid.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
@@ -63,12 +65,12 @@ $result_registros = $conn->query($sql_registros);
                     <li id="areaSinistros"> <img src="../components/assets/multasIcon.png" alt=""> Sinistros</li>
                     <li id="areaMotoristas"> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li id="areaCarros"> <img src="../components/assets/carIcon.png" alt=""> Carros</li>
-                    <div id="btnUpload">
+                    <!-- <div id="btnUpload">
                         <form method="POST" action="../importSinistros.php" enctype="multipart/form-data">
                             <li> <img src="../components/assets/CloudArrowUp.png" alt=""> <input type="file" name="xlsx"></li>
                             <input type="submit" value="Enviar">
                         </form>
-                    </div>
+                    </div> -->
                 </ul>
             </section>
         </article>
@@ -87,7 +89,8 @@ $result_registros = $conn->query($sql_registros);
 
                 <article id="registros" style="display: none;">
                     <section>
-                        <div class="m-5" style="width: 80%; margin:auto;">
+                        <h1 class="tituloAreas">Área de Registros</h1>
+                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
                                 <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
@@ -138,14 +141,76 @@ $result_registros = $conn->query($sql_registros);
 
                 <section id="sinistros" style="display: none">
                     <article>
-                                    fjsadkgljasgsjg SINISTROdasfasdf
+                    <h1 class="tituloAreas">Área de Sinistros</h1>
+
+                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
+                            <div class="button-container" style="margin-bottom: 1vh;">
+                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+
+                            </div>
+                            <table class="sinistro-tabela">
+                                <thead>
+                                    <tr>
+                                        <!-- <th scope="col">ID Registro</th> -->
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Matrícula</th>
+                                        <th scope="col">CNH</th>
+                                        <!-- <th scope="col">Marca</th> -->
+                                        <th scope="col">Placa</th>
+                                        <!-- <th scope="col">Data Final</th>
+                                        <th scope="col">Data Inicial</th> -->
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Data do Sinistro</th>
+                                        <th scope="col">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($sinistro = mysqli_fetch_assoc($sinistro_list)) {
+                                        $registro = mysqli_query($conn, "SELECT registros.*, carros.placa, motoristas.nome, motoristas.matricula, sinistros.tipo, sinistros.descricao, sinistros.dtSinistro, motoristas.cnh
+                                            FROM registros
+                                            INNER JOIN carros ON registros.placa = carros.placa
+                                            INNER JOIN motoristas ON registros.matricula = motoristas.matricula
+                                            INNER JOIN sinistros ON registros.idRegistro = sinistros.idRegistro
+                                            WHERE registros.idRegistro = '$sinistro[idRegistro]'");
+                                        if (mysqli_num_rows($registro) > 0) {
+                                            $registro_data = mysqli_fetch_assoc($registro);
+                                            echo "<tr>";
+                                            // echo"<td>" . $user_data ['idRegistro'] . "</td>";
+                                            echo "<td>" . $registro_data['nome'] . "</td>";
+                                            echo "<td>" . $registro_data['matricula'] . "</td>";
+                                            echo "<td>" . $registro_data['cnh'] . "</td>";
+                                            // echo "<td>" . $registro_data['marca'] . "</td>";
+                                            echo "<td>" . $registro_data['placa'] . "</td>";
+                                            // echo "<td>" . $registro_data['dtInicioUso'] . "</td>";
+                                            // echo "<td>" . $registro_data['dtFimUso'] . "</td>";
+                                            echo "<td>" . $registro_data['tipo'] . "</td>";
+                                            echo "<td>" . $registro_data['descricao'] . "</td>";
+                                            echo "<td>" . $registro_data['dtSinistro'] . "</td>";
+                                            echo '<td><div class="btn-group-edit">
+                                            <button class="btn-deletar" onclick="deletarRegistros(' . $registro_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                </td>';
+                                            echo "</tr>";
+                                        }
+                                    }
+                                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </article>
                 </section>
 
                 <section id="motoristas" style="display: none">
                     <article>
-                        <div class="m-5" style="width: 80%; margin:auto;">
-                        <div class="button-container" style="margin-bottom: 1vh;">
+                    <h1 class="tituloAreas">Área de Motoristas</h1>
+
+                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
+                            <div class="button-container" style="margin-bottom: 1vh;">
                                 <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
                                 <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
@@ -184,10 +249,12 @@ $result_registros = $conn->query($sql_registros);
 
                 <section id="carros" style="display: none">
                     <article>
-                        <div class="m-5" style="width: 80%; margin:auto;">
+                    <h1 class="tituloAreas">Área de Carros</h1>
+
+                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 50vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
-                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                            <button type="file" id="xlsx" name="xlsx" id="btn-upload" class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                            <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
                             <table class="carros-tabela">
                                 <thead>
@@ -216,16 +283,18 @@ $result_registros = $conn->query($sql_registros);
                                         echo "<td>" . $user_data['cor'] . "</td>";
                                         echo "<td>";
                                         if ($user_data['ativo'] == 1) {
-                                          echo '<span class="ativo-icone">&#10003;</span>'; // Símbolo de "certo"
+                                            echo '<span class="ativo-icone">&#10003;</span>'; // Símbolo de "certo"
                                         } else {
-                                          echo '<span class="ativo-icone">&#10007;</span>'; // Símbolo de "xiszinho"
-                                        }                                        
+                                            echo '<span class="ativo-icone">&#10007;</span>'; // Símbolo de "xiszinho"
+                                        }
                                         echo '<td>
                                         <div class="btn-group-edit">
                                         <button class="btn-edit" onclick="editarCarro(' . $user_data['placa'] . ')"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-deletar" onclick="deletarCarro(' . $user_data['placa'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                   
+                                        <button class="btn-deletar" onclick="deletarCarro(this)" data-placa=" '. $user_data['placa'].'"><i class="fas fa-trash-alt"></i></button>
+
                                         </div>
-                                    
+
                                         </td>';
                                         echo "</tr>";
                                     }
@@ -242,41 +311,99 @@ $result_registros = $conn->query($sql_registros);
 
 
     <script>
+function deletarCarro(btn) {
+    var placa = btn.getAttribute('data-placa');
+
+    if (confirm('Deseja excluir a tupla com a placa: ' + placa + '?')) {
+        // Faça uma solicitação AJAX para excluir a tupla no lado do servidor
+        // Passando o valor da placa como parâmetro para identificar a tupla a ser excluída
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'excluir_carro.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+                // Atualize a tabela ou execute outras ações necessárias após excluir a tupla
+            } else {
+                alert('Erro ao excluir a tupla.');
+            }
+        };
+        xhr.send('placa=' + encodeURIComponent(placa));
+    }
+}
+
+
+
+
+
+
+
         $(document).ready(function() {
             // ...
 
             $.extend($.fn.dataTable.defaults, {
-            language: {
-                "sEmptyTable": "Nenhum dado encontrado na tabela",
-                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
-                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
-                "sInfoPostFix": "",
-                "sInfoThousands": ".",
-                "sLengthMenu": "_MENU_ resultados por página",
-                "sLoadingRecords": "Carregando...",
-                "sProcessing": "Processando...",
-                "sZeroRecords": "Nenhum registro encontrado",
-                "sSearch": "Pesquisar",
-                "oPaginate": {
-                    "sNext": "Próximo",
-                    "sPrevious": "Anterior",
-                    "sFirst": "Primeiro",
-                    "sLast": "Último"
-                },
-                "oAria": {
-                    "sSortAscending": ": Ordenar colunas de forma ascendente",
-                    "sSortDescending": ": Ordenar colunas de forma descendente"
-                },
-                "select": {
-                    "rows": {
-                        "_": "Selecionado %d linhas",
-                        "0": "Nenhuma linha selecionada",
-                        "1": "Selecionado 1 linha"
+                language: {
+                    "sEmptyTable": "Nenhum dado encontrado na tabela",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_ resultados por página",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "sSearch": "Pesquisar",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    },
+                    "select": {
+                        "rows": {
+                            "_": "Selecionado %d linhas",
+                            "0": "Nenhuma linha selecionada",
+                            "1": "Selecionado 1 linha"
+                        }
                     }
                 }
-            }
-        });
+            });
+
+            $('.sinistro-tabela').DataTable({
+                dom: 'Bfrtip',
+                buttons: [{
+                        text: 'Editar',
+                        className: 'btn-editar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para editar o registro
+                            alert('Editar registro');
+                        }
+                    },
+                    {
+                        text: 'Deletar',
+                        className: 'btn-deletar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para deletar o registro
+                            alert('Deletar registro');
+                        }
+                    },
+                    {
+                        text: 'Upload',
+                        className: 'btn-upload',
+                        action: function(e, dt, node, config) {
+                            // Lógica para upload de arquivo
+                            alert('Upload de arquivo');
+                        }
+                    }
+                ]
+            });
+
             // Adicionar botões na tabela de motoristas
             $('.motoristas-tabela').DataTable({
                 dom: 'Bfrtip',

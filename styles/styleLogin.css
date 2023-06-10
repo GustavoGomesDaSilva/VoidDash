@@ -100,6 +100,8 @@ body{
     border-radius: 10px;
     padding: 15px;
     background-color: #d4d4d475;
+    background-color: #705885b6;
+    border: #ffd024af 1px solid;
     color: #F2F2F2;
     font-size: 12pt;
     outline:none;
@@ -116,8 +118,8 @@ body{
     /* text-align: initial ; */
 }
 .text-field input:focus{
-    background-color: #705885b6;
-    border: #ffd024af 1px solid;
+    background-color: #d4d4d475;
+    border: #ffd024fd 1px solid;
 }  
 
 #btnLogin{

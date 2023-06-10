@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/stylePrincipal.css">
 
-    <link rel="shortcut icon" href="components/assets/novaLogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="components/assets/LogoVoid.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
@@ -73,7 +73,7 @@
                     <a href="views/login.php">Saiba Mais -></a>
                 </div>
                 <div id="imgCardDois">
-                    <img src="components/assets/imgCarddois.png" alt="">
+                    <img src="components/assets/imgCarddois.svg" alt="">
                 </div>
             </article>
             <article id="cardsVerticais">
@@ -105,7 +105,7 @@
             <h1 id="tituloSobre"><span class="tituloRoxo">Sobre Nós</span></h1>
             <article id="conteudoSobre">
                 <div id="imgSobre">
-                    <img src="components/assets/sobreNosImg.png" alt="">
+                    <img src="components/assets/sobreNosImg.svg" alt="">
                 </div>
                 <div id="txtSobre">
                     <p>A voidTech é uma empresa de soluções tecnológicas que se dedica a fornecer soluções personalizadas e inovadoras para nossos clientes. Com nossa equipe altamente qualificada e experiente, estamos sempre atualizados com as últimas tendências do mercado.
@@ -147,13 +147,15 @@
         <a name="Contato"></a>
         <footer>
             <section id="footerTopo">
+            <a href="#Home">
                 <div>
                     <img src="components/assets/novaLogo.png" alt="">
                 </div>
+                </a>
                 <div id="footerDireita">
-                    <a href="#Home">Home ^</a>
-                    <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img src="components/assets/GitHub.png" alt="logo do GitHub"></a>
-                    <a href="https://linktr.ee/voiddash" target="_blank"><img src="components/assets/LinkedInIcon.png" alt=""></a>
+                    <!-- <a href="#Home">Home ^</a> -->
+                    <a href="https://github.com/GustavoGomesDaSilva/VoidDash" target="_blank"><img src="components/assets/GitHub.svg" alt="logo do GitHub"></a>
+                    <a href="https://linktr.ee/voiddash" target="_blank"><img src="components/assets/LinkedInIcon.svg" alt=""></a>
                 </div>
             </section>
             <section>

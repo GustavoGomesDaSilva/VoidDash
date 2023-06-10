@@ -93,12 +93,11 @@ main{
     /* background-color: aqua; */
 }
 
-
+/* 
 #menuEsquerda #opcoesMenu #btnUpload{
     display: flex;
     flex-direction: column;
     height: fit-content;
-    /* background-color: #727272; */
     align-items: flex-start;
     justify-content: flex-start;
 }
@@ -120,7 +119,6 @@ main{
 }
 #menuEsquerda #opcoesMenu #btnUpload input[type='file'] {
     
-    /* background-color: #726228; */
     width: 10vw;
     height: 5vh;
     border: none;
@@ -143,13 +141,12 @@ main{
 #menuEsquerda #opcoesMenu #btnUpload input[type='file']:before {
     content: 'Upload';
     display: inline-block;
-    /* background-color: #FFC700; */
     color: #222;
     padding: 8px 12px 8px 0px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-}
+} */
 
 #menuEsquerda #opcoesMenu ul{
     list-style: none;
@@ -157,7 +154,7 @@ main{
     /* background-color: #FFC700; */
 }
 #menuEsquerda #opcoesMenu li{
-    margin: 4vh 0 2vh 0;
+    margin: 8vh 0 2vh 0;
     height: max-content;
     /* background-color: aqua; */
     display: flex;
@@ -167,7 +164,7 @@ main{
     cursor: pointer;
     transform: scale(1.1);
 
-    color: #727272;
+    color: #A200EE;
     transition: all 0.3s;
 }
 #logoPainel{
@@ -192,6 +189,7 @@ main{
 #conteudoPrincipal{
     width: 80vw;
     height: auto;
+    
     margin-left: 18.7vw;
 }
 #conteudoPrincipal #painlePrincipal{
@@ -225,24 +223,53 @@ main{
 }
 
 
+/*  */
+
+.tituloAreas{
+    text-align: center;
+    font-size: 23px;
+    color: #222;
+    margin: 1vh auto; 
+}
 
 /*  */
 
+
+/* Altera a cor da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Altera a cor do trilho da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #e4e4e4; /* Cor de fundo do trilho */
+}
+
+/* Altera a cor do "polegar" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #bebebe; /* Cor do "polegar" */
+}
+
+/* Altera a cor do "polegar" da barra de rolagem quando estiver sendo arrastado */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #300046; /* Cor do "polegar" em hover */
+}
 
 
 /* Estilos para as tabelas */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    /* margin-bottom: 200px; */
     /* border: #222 solid 1px; */
   }
-  
+
   thead {
     background-color: #f2f2f2;
   }
   .dataTables_filter{
     margin: 2vh auto;
+    margin-top: -6vh;
   }
   th,
   td {
@@ -350,8 +377,9 @@ table {
 
   .button-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     /* margin-bottom: 10px; */
+    /* margin-bottom: -100vh; */
   }
 
   .btn-upload, .btn-add-field {
