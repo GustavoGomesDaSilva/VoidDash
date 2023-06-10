@@ -12,7 +12,7 @@ main{
     background-color: #FFFFF6;
     display: flex;
     /* background-color: aqua; */
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #topoPainel{
