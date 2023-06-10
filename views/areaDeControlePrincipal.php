@@ -31,14 +31,19 @@ $result_registros = $conn->query($sql_registros);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- importantdo a font que será usada no site -->
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-**" crossorigin="anonymous" />
+
 
     <title>VoidDash</title>
 </head>
+
 <body>
 
     <main>
@@ -79,117 +84,154 @@ $result_registros = $conn->query($sql_registros);
                         Nunca foi tão <span class="txtRoxo">fácil</span>
                         controlar sua <span class="txtRoxo">frota</span></p>
                 </div>
-                
+
                 <article id="registros" style="display: none;">
-                    <section  >
-                    <div class="m-5" style="width: 80%; margin:auto;" >
-                        <table class="carros-tabela">
-                            <thead>
-                                <tr>
-                                <!-- <th scope="col">ID Registro</th> -->
-                                <th scope="col">Nome</th>
-                                <th scope="col">Matricula</th>
-                                <th scope="col">CNH</th>
-                                <th scope="col">Veiculo</th>
-                                <th scope="col">Placa</th>
-                                <th scope="col">Data da Saida</th>
-                                <th scope="col">Previsao do Retorno</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <section>
+                        <div class="m-5" style="width: 80%; margin:auto;">
+                            <div class="button-container" style="margin-bottom: 1vh;">
+                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                            </div>
+                            <table class="carros-tabela">
+                                <thead>
+                                    <tr>
+                                        <!-- <th scope="col">ID Registro</th> -->
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Matricula</th>
+                                        <th scope="col">CNH</th>
+                                        <th scope="col">Veiculo</th>
+                                        <th scope="col">Placa</th>
+                                        <th scope="col">Data da Saida</th>
+                                        <th scope="col">Previsao do Retorno</th>
+                                        <th scope="col">Ações</th>
 
-                                <?php
-                                while($user_data = mysqli_fetch_assoc($result_registros))
-                                {
-                                    echo "<tr>";
-                                    // echo"<td>" . $user_data ['idRegistro'] . "</td>";
-                                    echo"<td>" . $user_data ['nome'] . "</td>";
-                                    echo"<td>" . $user_data ['matricula'] . "</td>";
-                                    echo"<td>" . $user_data ['cnh'] . "</td>";
-                                    echo"<td>" . $user_data ['marca'] . $user_data ['carro'] . "</td>";
-                                    echo"<td>" . $user_data ['placa'] . "</td>";
-                                    echo"<td>" . $user_data ['dtInicioUso'] . "</td>";
-                                    echo"<td>" . $user_data ['dtFimUso'] . "</td>";
-                                    
-                                }
-                                ?>
 
-                            </tbody>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($user_data = mysqli_fetch_assoc($result_registros)) {
+                                        echo "<tr>";
+                                        // echo"<td>" . $user_data ['idRegistro'] . "</td>";
+                                        echo "<td>" . $user_data['nome'] . "</td>";
+                                        echo "<td>" . $user_data['matricula'] . "</td>";
+                                        echo "<td>" . $user_data['cnh'] . "</td>";
+                                        echo "<td>" . $user_data['marca'] . $user_data['carro'] . "</td>";
+                                        echo "<td>" . $user_data['placa'] . "</td>";
+                                        echo "<td>" . $user_data['dtInicioUso'] . "</td>";
+                                        echo "<td>" . $user_data['dtFimUso'] . "</td>";
+                                        echo '<td><div class="btn-group-edit">
+                                    <button class="btn-edit" onclick="editarRegistros(' . $user_data['matricula'] . ')"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-deletar" onclick="deletarRegistros(' . $user_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </td>';
+                                        echo "</tr>";
+                                    }
+                                    ?>
+
+                                </tbody>
                             </table>
                         </div>
                     </section>
                 </article>
 
                 <section id="sinistros" style="display: none">
-                    <article >
-                        Sinistros
+                    <article>
+                                    fjsadkgljasgsjg SINISTROdasfasdf
                     </article>
                 </section>
 
                 <section id="motoristas" style="display: none">
-                    <article >
+                    <article>
                         <div class="m-5" style="width: 80%; margin:auto;">
-                        <table class="motoristas-tabela">
-                            <thead>
-                                <tr>
-                                <th scope="col">Matricula</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">CNH</th>
-                                <th scope="col">Data de Nascimento</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                while($user_data = mysqli_fetch_assoc($result_motoristas))
-                                {
-                                    echo "<tr>";
-                                    echo"<td>" . $user_data ['matricula'] . "</td>";
-                                    echo"<td>" . $user_data ['nome'] . "</td>";
-                                    echo"<td>" . $user_data ['cnh'] . "</td>";
-                                    echo"<td>" . $user_data ['dtNasc'] . "</td>";
-                                }
-                                ?>
-
-                            </tbody>
+                        <div class="button-container" style="margin-bottom: 1vh;">
+                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                            </div>
+                            <table class="motoristas-tabela">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Matricula</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">CNH</th>
+                                        <th scope="col">Data de Nascimento</th>
+                                        <th scope="col">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($user_data = mysqli_fetch_assoc($result_motoristas)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $user_data['matricula'] . "</td>";
+                                        echo "<td>" . $user_data['nome'] . "</td>";
+                                        echo "<td>" . $user_data['cnh'] . "</td>";
+                                        echo "<td>" . $user_data['dtNasc'] . "</td>";
+                                        echo '<td><div class="btn-group-edit">
+                                        <button class="btn-edit" onclick="editarMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-deletar" onclick="deletarMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                        
+                            </td>';
+                                        echo "</tr>";
+                                    }
+                                    ?>
+                                </tbody>
                             </table>
                         </div>
                     </article>
                 </section>
 
                 <section id="carros" style="display: none">
-                    <article >
-                    <div class="m-5" style="width: 80%; margin:auto;">
-                        <table class="carros-tabela">
-                            <thead>
-                                <tr>
-                                <th scope="col">Locadora</th>
-                                <th scope="col">Placa</th>
-                                <th scope="col">Marca</th>
-                                <th scope="col">Carro</th>
-                                <th scope="col">Modelo</th>
-                                <th scope="col">Cor</th>
-                                <th scope="col">Ativo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <article>
+                        <div class="m-5" style="width: 80%; margin:auto;">
+                            <div class="button-container" style="margin-bottom: 1vh;">
+                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                            </div>
+                            <table class="carros-tabela">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Locadora</th>
+                                        <th scope="col">Placa</th>
+                                        <th scope="col">Marca</th>
+                                        <th scope="col">Carro</th>
+                                        <th scope="col">Modelo</th>
+                                        <th scope="col">Cor</th>
+                                        <th scope="col">Ativo</th>
+                                        <th scope="col">Ações</th>
 
-                                <?php
-                                while($user_data = mysqli_fetch_assoc($result_carros))
-                                {
-                                    echo "<tr>";
-                                    echo"<td>" . $user_data ['locadora'] . "</td>";
-                                    echo"<td>" . $user_data ['placa'] . "</td>";
-                                    echo"<td>" . $user_data ['marca'] . "</td>";
-                                    echo"<td>" . $user_data ['carro'] . "</td>";
-                                    echo"<td>" . $user_data ['modelo'] . "</td>";
-                                    echo"<td>" . $user_data ['cor'] . "</td>";
-                                    echo"<td>" . $user_data ['ativo'] . "</td>";
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($user_data = mysqli_fetch_assoc($result_carros)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $user_data['locadora'] . "</td>";
+                                        echo "<td>" . $user_data['placa'] . "</td>";
+                                        echo "<td>" . $user_data['marca'] . "</td>";
+                                        echo "<td>" . $user_data['carro'] . "</td>";
+                                        echo "<td>" . $user_data['modelo'] . "</td>";
+                                        echo "<td>" . $user_data['cor'] . "</td>";
+                                        echo "<td>";
+                                        if ($user_data['ativo'] == 1) {
+                                          echo '<span class="ativo-icone">&#10003;</span>'; // Símbolo de "certo"
+                                        } else {
+                                          echo '<span class="ativo-icone">&#10007;</span>'; // Símbolo de "xiszinho"
+                                        }                                        
+                                        echo '<td>
+                                        <div class="btn-group-edit">
+                                        <button class="btn-edit" onclick="editarCarro(' . $user_data['placa'] . ')"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-deletar" onclick="deletarCarro(' . $user_data['placa'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
                                     
-                                }
-                                ?>
+                                        </td>';
+                                        echo "</tr>";
+                                    }
+                                    ?>
 
-                            </tbody>
+                                </tbody>
                             </table>
                         </div>
                     </article>
@@ -197,19 +239,13 @@ $result_registros = $conn->query($sql_registros);
             </article>
         </div>
     </main>
+
+
     <script>
-        // $(document).ready(function() {
-        //     // Aplicar filtro na tabela de motoristas
-        //     $('.motoristas-tabela').DataTable();
+        $(document).ready(function() {
+            // ...
 
-        //     // Aplicar filtro na tabela de carros
-        //     $('.carros-tabela').DataTable();
-        // });
-
-
-    $(document).ready(function() {
-        // Definir o idioma para português
-        $.extend($.fn.dataTable.defaults, {
+            $.extend($.fn.dataTable.defaults, {
             language: {
                 "sEmptyTable": "Nenhum dado encontrado na tabela",
                 "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -241,14 +277,68 @@ $result_registros = $conn->query($sql_registros);
                 }
             }
         });
+            // Adicionar botões na tabela de motoristas
+            $('.motoristas-tabela').DataTable({
+                dom: 'Bfrtip',
+                buttons: [{
+                        text: 'Editar',
+                        className: 'btn-editar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para editar o registro
+                            alert('Editar registro');
+                        }
+                    },
+                    {
+                        text: 'Deletar',
+                        className: 'btn-deletar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para deletar o registro
+                            alert('Deletar registro');
+                        }
+                    },
+                    {
+                        text: 'Upload',
+                        className: 'btn-upload',
+                        action: function(e, dt, node, config) {
+                            // Lógica para upload de arquivo
+                            alert('Upload de arquivo');
+                        }
+                    }
+                ]
+            });
 
-        // Aplicar filtro na tabela de motoristas
-        $('.motoristas-tabela').DataTable();
+            // Adicionar botões na tabela de carros
+            $('.carros-tabela').DataTable({
+                dom: 'Bfrtip',
+                buttons: [{
+                        text: 'Editar',
+                        className: 'btn-editar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para editar o registro
+                            alert('Editar registro');
+                        }
+                    },
+                    {
+                        text: 'Deletar',
+                        className: 'btn-deletar',
+                        action: function(e, dt, node, config) {
+                            // Lógica para deletar o registro
+                            alert('Deletar registro');
+                        }
+                    },
+                    {
+                        text: 'Upload',
+                        className: 'btn-upload',
+                        action: function(e, dt, node, config) {
+                            // Lógica para upload de arquivo
+                            alert('Upload de arquivo');
+                        }
+                    }
+                ]
+            });
 
-        // Aplicar filtro na tabela de carros
-        $('.carros-tabela').DataTable();
-    });
-
+            // ...
+        });
     </script>
 </body>
 

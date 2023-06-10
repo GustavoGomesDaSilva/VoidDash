@@ -235,13 +235,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    
+    /* border: #222 solid 1px; */
   }
   
   thead {
     background-color: #f2f2f2;
   }
-  
+  .dataTables_filter{
+    margin: 2vh auto;
+  }
   th,
   td {
     padding: 8px;
@@ -295,3 +297,109 @@ table {
     background-color: #f9f9f9;
   }
   
+
+
+  /*  */
+
+
+  
+  .btn-deletar, .btn-edit {
+    /* background-color: #e9e9e9; */
+    border: none;
+    /* color: #333; */
+    /* padding: 8px 16px; */
+    width: 30px;
+    height: 30px;
+    /* padding: 5px 10px; */
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 2% auto;
+    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .btn-deletar:hover{
+    background-color: #c92121;
+  }
+.btn-group-edit{
+    display: flex;
+}
+
+  .btn-edit{
+    /* color: #222; */
+    background-color: #0664f0;
+
+  }
+  .btn-edit:hover{
+    background-color: #1874ff;
+  }
+  .btn-edit i{
+    color: #f2f2f2;
+  }
+  .btn-deletar{
+    background-color: #9e1414;
+  }
+  .btn-deletar i{
+    color: #f2f2f2;
+  }
+
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    /* margin-bottom: 10px; */
+  }
+
+  .btn-upload, .btn-add-field {
+    background-color: #e9e9e9;
+    border: none;
+    color: #222;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  .btn-upload i{
+    color: #A200EE;
+  }
+  .btn-add-field i{
+    color: #FFC700;
+  }
+
+  .btn-upload:hover, .btn-add-field:hover {
+    background-color: #ccc;
+  }
+
+  .btn-upload i, .btn-add-field i {
+    margin-right: 8px;
+  }
+
+  .ativo-icone {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 16px;
+    background-color: green;
+    border-radius: 5px;
+    margin: auto;
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ativo-icone.certo {
+    color: green;
+  }
+  
+  .ativo-icone.xiszinho {
+    color: red;
+  }
