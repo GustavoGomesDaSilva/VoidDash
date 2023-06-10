@@ -133,7 +133,7 @@ body{
     margin: 25px; */
     border: none;
     border-radius: 15px;
-    background: linear-gradient(218deg, rgba(255, 200, 0, 0.822) 53%, rgba(0,0,0,1) 190%);
+    background: linear-gradient(218deg, #ffc800d2 53%, rgba(0,0,0,1) 190%);
     outline: none;
     font-weight: 400;
     font-size: 20px;
@@ -158,12 +158,30 @@ body{
     color: #F5F5F5;
     text-decoration: none;
 }
-
+.lembrar{
+    /* background-color: pink; */
+    height: auto;
+    display: flex;
+    padding-left: 2%;
+}
+.lembrar #checkbox {
+    width: 18px;
+    height: 18px;
+    border: #ffc800 solid 1px;
+    border-radius: 3px;
+    outline: none;
+    background-color: transparent;
+    color: transparent;
+}
+.lembrar #checkbox:checked{
+    background-color: #ffc800;
+}
 #lembrar{
     color: #F5F5F5;
     justify-content: center;
     display: flex;
-    align-items: center;     
+    align-items: center;    
+    margin-left: 3%; 
 }
 
 
