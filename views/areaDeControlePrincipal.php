@@ -17,6 +17,7 @@ $result_registros = $conn->query($sql_registros);
 
 $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistro DESC");
 
+    
 
 ?>
 
@@ -253,8 +254,61 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 50vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                            <button type="file" id="xlsx" name="xlsx" id="btn-upload" class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
-                            <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                           <form action="../config/importCarros.php" method="post" enctype="multipart/form-data">
+                             <input type="file" id="xlsx" name="xlsx" style="display:none;">
+                             <label for="xlsx" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                             <button type="submit">Enviar</button>                             
+                            </form>
+                            <button class="btn-add-field" id="openModalBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                            </div>
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h2>Adicionar carro</h2>
+
+                                    <article  style="display: flex;">
+                                    <div id="locadorasCarro">
+                                        <form action="../config/insertCarros.php" method="post">
+                                            <p>Locadora </p> 
+                                            <select name="id_categoria" id="select">
+                                                        <option value="1">Car4U</option>
+                                                        <option value="2">EasyCar</option>
+                                                        <option value="3">DriveOut</option>
+                                                    </select>            
+                                        
+                                </div>
+                                    <div id="placaCarros" >
+                                       
+                                            <p>Placa</p>
+                                            <input type="text" id="placaAdicionar" name="placaAdicionar">             
+                                    
+                                    </div>
+                                    <div id="marcaCarros" >
+                                            <p>Marca</p>
+                                            <input type="text" id="marcaAdicionar" name="marcaAdicionar">             
+                                    
+                                    </div>
+                                    <div id="carroCarros" >
+                                            <p>Nomne do carro</p>
+                                            <input type="text" id="carroAdicionar" name="carroAdicionar">             
+                                    
+                                    </div>
+                                    <div id="modeloCarros" >
+                                            <p>Modelo do carro</p>
+                                            <input type="text" id="modeloAdicionar" name="modeloAdicionar">                                                 
+                                    </div>
+                                    <div id="corCarros" >
+                                            <p>Cor do carro</p>
+                                            <input type="text" id="corAdicionar" name="corAdicionar">             
+                                    
+                                    </div>
+                                    
+                                    </article>
+                                    <div id="btnEnviar">
+                                        <input type="submit" value="Enviar" id="enviarCarros">
+                                    </div>
+                                </form>
+                                </div>
                             </div>
                             <table class="carros-tabela">
                                 <thead>
@@ -283,9 +337,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo "<td>" . $user_data['cor'] . "</td>";
                                         echo "<td>";
                                         if ($user_data['ativo'] == 1) {
-                                            echo '<span class="ativo-icone">&#10003;</span>'; // Símbolo de "certo"
+                                            echo '<button id="ativo" class="ativo-icone" onclick="trocarAtivo()">&#10003;</button>'; // Símbolo de "certo"
                                         } else {
-                                            echo '<span class="ativo-icone">&#10007;</span>'; // Símbolo de "xiszinho"
+                                            echo '<button class="ativo-icone">&#10007;</button>'; // Símbolo de "xiszinho"
                                         }
                                         echo '<td>
                                         <div class="btn-group-edit">
@@ -538,4 +592,55 @@ function deletarCarro(btn) {
         carros.classList.add("fade");
         registros.classList.remove("fade");
     });
+
+    
+        
+
+        // Obtém o botão de abrir o modal
+            var openModalBtn = document.getElementById("openModalBtn");
+
+            // Obtém o modal
+            var modal = document.getElementById("myModal");
+
+            // Obtém o elemento <span> que fecha o modal
+            var closeBtn = document.getElementsByClassName("close")[0];
+
+            // Quando o usuário clicar no botão, abre o modal
+            openModalBtn.onclick = function() {
+            modal.style.display = "block";
+            };
+
+            // Quando o usuário clicar no botão de fechar, fecha o modal
+            closeBtn.onclick = function() {
+            modal.style.display = "none";
+            };
+
+            // Quando o usuário clicar fora do modal, fecha-o
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            };
+          
+
+            function trocarAtivo() {
+    // Obtém o elemento do ícone
+    var icon = document.querySelector('.ativo-icone');
+
+    // Adiciona um evento de clique ao ícone
+    icon.addEventListener('click', function() {
+        if (icon.style.backgroundColor === 'rgb(201, 33, 33)') { // Verifica se está vermelho
+            icon.style.backgroundColor = '#008000'; // Altera para verde
+            icon.innerHTML = '&#10003;';
+
+            
+        } else {
+            icon.style.backgroundColor = '#c92121'; // Altera para vermelho
+            icon.innerHTML = '&#10007;';
+
+            // Realizar a query de update aqui, definindo 'ativo' como 0 na tabela 'carros'
+        }
+    });
+}
+
 </script>

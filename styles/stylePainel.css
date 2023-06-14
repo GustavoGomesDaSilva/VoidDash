@@ -431,3 +431,72 @@ table {
   .ativo-icone.xiszinho {
     color: red;
   }
+
+  /* modal */
+
+  .modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    /* min-height: 30vh; */
+
+  }
+  .modal-content h2{
+    text-align: center;
+  }
+  .modal-content article {
+    width: fit-content;
+    margin: 10vh auto;
+
+  }
+  .modal-content article div {
+    margin: auto 10px;
+
+  }
+  .modal-content article div form input{
+    border: #300046 solid 2px;
+    outline: none;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #c92121;
+  }
+
+  #btnEnviar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #enviarCarros{
+    width: 8vw;
+    height: 5vh;
+    background-color: #fccc30;
+    /* margin: auto; */
+  }
+  
