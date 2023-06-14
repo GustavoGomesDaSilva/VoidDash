@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Maio-2023 às 06:34
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 14-Jun-2023 às 03:29
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,6 +42,11 @@ CREATE TABLE `carros` (
 --
 
 INSERT INTO `carros` (`placa`, `locadora`, `marca`, `carro`, `modelo`, `cor`, `ativo`) VALUES
+('ABC-1234', 'DriveOut', 'Volkswagen', 'Gol', '2021', 'Branco', 1),
+('ADC-1234', 'EasyCar', 'Fiat', 'Toro', '2022', 'Prata', 1),
+('BCD-0123', 'DriveOut', 'Chevrolet', 'Celta', '2022', 'Vermelho', 1),
+('BCD-8901', 'DriveOut', 'Chevrolet', 'Celta', '2021', 'Vermelho', 1),
+('CDE-4567', 'DriveOut', 'Renault', 'Kwid', '2022', 'Branco', 1),
 ('DEF-5678', 'Car4U', 'Fiat', 'Uno', '2022', 'Prata', 1),
 ('EFG-2345', 'Car4U', 'Ford', 'Fiesta', '2022', 'Azul', 1),
 ('EFG-4567', 'Car4U', 'Ford', 'Fiesta', '2021', 'Azul', 1),
@@ -53,6 +58,7 @@ INSERT INTO `carros` (`placa`, `locadora`, `marca`, `carro`, `modelo`, `cor`, `a
 ('JKL-3456', 'DriveOut', 'Fiat', 'Palio', '2022', 'Vermelho', 1),
 ('KLM-0123', 'DriveOut', 'Volkswagen', 'Voyage', '2023', 'Branco', 1),
 ('KLM-2345', 'DriveOut', 'Volkswagen', 'Voyage', '2021', 'Branco', 1),
+('LKO-5578', 'DriveOut', 'Ford', 'Fiesta', '2020', 'Preto', 1),
 ('LMN-6789', 'DriveOut', 'Renault', 'Clio', '2021', 'Vermelho', 1),
 ('MNO-7890', 'Car4U', 'Ford', 'Ka', '2021', 'Azul', 1),
 ('NOP-4567', 'Car4U', 'Renault', 'Logan', '2022', 'Prata', 1),
@@ -164,6 +170,27 @@ CREATE TABLE `sinistros` (
 
 INSERT INTO `sinistros` (`idSinistro`, `idRegistro`, `tipo`, `descricao`, `dtSinistro`) VALUES
 (4, 2, 'avarias', 'carro retornou ao pátio com alguns riscos na porta do motorista', '2023-05-18 18:04:24');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `matricula` int(80) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `senha` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`matricula`, `nome`, `email`, `senha`) VALUES
+(478, 'Higor', 'higor.com', '$2y$10$vN.LrkG6CCs729Q2BnyrPOW.hNaihsgYIzqnlrc8Plpb.f1.B8hYe'),
+(2201, 'leonardo dias', 'leo-ds@live.com', '$2y$10$vB7ztNJAPKujqTCjQiFE9uVoLozCU6Li/delx1WAZ9.gXPYZKXpae');
 
 --
 -- Índices para tabelas despejadas
