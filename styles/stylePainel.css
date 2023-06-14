@@ -281,51 +281,40 @@ table {
     background-color: #f9f9f9;
   }
   
-  /* Estilos específicos para a tabela de motoristas */
-  table.motoristas-tabela {
-    width: 80%;
-    border-collapse: collapse;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-  
-  table.motoristas-tabela thead {
-    background-color: #f2f2f2;
-  }
-  
-  table.motoristas-tabela th,
-  table.motoristas-tabela td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  table.motoristas-tabela tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
   
   /* Estilos específicos para a tabela de carros */
-  table.carros-tabela {
+  table.carros-tabela, table.motoristas-tabela, table.registros-tabela, table.sinistro-tabela {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
   }
   
-  table.carros-tabela thead {
+  table.carros-tabela thead, table.motoristas-tabela thead, table.registros-tabela thead, table.sinistro-tabela thead{
     background-color: #f2f2f2;
   }
+
   
   table.carros-tabela th,
-  table.carros-tabela td {
+  table.carros-tabela td, table.motoristas-tabela th,
+  table.motoristas-tabela td, table.registros-tabela th,
+  table.registros-tabela td, td, table.sinistro-tabela th,
+  table.sinistro-tabela td {
     padding: 8px;
     text-align: left;
   }
   
-  table.carros-tabela tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  table.carros-tabela tbody tr:nth-child(even), table.motoristas-tabela tbody tr:nth-child(even), table.registros-tabela tbody tr:nth-child(even), table.sinistro-tabela tbody tr:nth-child(even) {
+    background-color: #dfdfdf;
   }
   
 
+  table.registros-tabela{
+    background-color: #f7f7f7;
+  }
+  table.registros-tabela thead{
+    background-color: #f2f2f2;
 
+  }
   /*  */
 
 
