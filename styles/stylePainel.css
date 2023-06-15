@@ -27,6 +27,7 @@ main{
     /* margin-left: 3vw; */
     /* background-color: #A200EE; */
 }
+
 #topoPainel div{
     width: 20vw;
     height: 18vh;
@@ -52,6 +53,7 @@ main{
 
 
 }
+
 #menuEsquerda #topoMenuEsquerda{
     display: flex;
     align-items: center;
@@ -62,6 +64,7 @@ main{
     border-bottom: 1px solid #000;
     padding-top: 7%;
 }
+
 #menuEsquerda #topoMenuEsquerda img{
     width: 50%;
     height: 50%;
@@ -69,6 +72,11 @@ main{
 #menuEsquerda #topoMenuEsquerda p{
     margin: 5px 0;
     font-size: 19px;
+}
+#topoMenuEsquerda #nomeUsuario{
+  font-size: 28px!important;
+  color: #300046;
+  text-decoration: underline;
 }
 #menuEsquerda #topoMenuEsquerda #iconsTopEsquerda{
     width: 80%;
@@ -93,66 +101,7 @@ main{
     /* background-color: aqua; */
 }
 
-/* 
-#menuEsquerda #opcoesMenu #btnUpload{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-#menuEsquerda #opcoesMenu #btnUpload li{
-    margin-top: 0;
-}
-#menuEsquerda #opcoesMenu #btnUpload input[type='submit']{
-    background-color: #FFC700;
-    color: #fafafa;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}   
-#menuEsquerda #opcoesMenu #btnUpload input[type='submit']:hover{
-    background-color: #d8aa03;
-    transform: scale(1.1);
-    transition: all 0.3s;
-}
-#menuEsquerda #opcoesMenu #btnUpload input[type='file'] {
-    
-    width: 10vw;
-    height: 5vh;
-    border: none;
-    color: white;
-    padding: 8px 12px 8px 0px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-#menuEsquerda #opcoesMenu #btnUpload img {
-    margin-right: 8px;
-    margin-top: 4px;
-}
-
-#menuEsquerda #opcoesMenu #btnUpload input[type='file']::-webkit-file-upload-button {
-    visibility: hidden;
-}
-
-#menuEsquerda #opcoesMenu #btnUpload input[type='file']:before {
-    content: 'Upload';
-    display: inline-block;
-    color: #222;
-    padding: 8px 12px 8px 0px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-} */
-
-#menuEsquerda #opcoesMenu ul{
-    list-style: none;
-    width: fit-content;
-    /* background-color: #FFC700; */
-}
 #menuEsquerda #opcoesMenu li{
     margin: 8vh 0 2vh 0;
     height: max-content;
@@ -369,6 +318,9 @@ table {
     justify-content: flex-start;
     /* margin-bottom: 10px; */
     /* margin-bottom: -100vh; */
+    height: max-content;
+    /* background-color: #0664f0; */
+    align-items: baseline;
   }
 
   .btn-upload, .btn-add-field {
@@ -396,7 +348,18 @@ table {
   .btn-upload i, .btn-add-field i {
     margin-right: 8px;
   }
-
+  .btnEnviarUpload{
+    width: 8vw;
+    height: 5vh;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  .btnEnviarUpload:hover{
+    background-color: #b1b1b1;
+  }
   .ativo-icone {
     display: inline-block;
     width: 30px;
@@ -414,11 +377,11 @@ table {
   }
   
   .ativo-icone.certo {
-    color: green;
+    color: #006400;
   }
   
   .ativo-icone.xiszinho {
-    color: red;
+    color: #9e1414;
   }
 
   /* modal */
@@ -442,9 +405,24 @@ table {
     padding: 20px;
     border: 1px solid #888;
     width: 90%;
+  border-radius: 15px;
+
     /* min-height: 30vh; */
 
   }
+  .ativo{
+    background-color: #006400;
+  }
+  .inativo{
+    background-color: #9e1414;
+  }
+
+  .modal-content input, .modal-content select{
+    border: #300046 solid 1px;
+    border-radius: 5px;
+    width: 9vw;
+  }
+ 
   .modal-content h2{
     text-align: center;
   }
@@ -474,7 +452,7 @@ table {
     color: black;
     text-decoration: none;
     cursor: pointer;
-    background-color: #c92121;
+    /* background-color: #c92121; */
   }
 
   #btnEnviar{
@@ -486,6 +464,265 @@ table {
     width: 8vw;
     height: 5vh;
     background-color: #fccc30;
+    border-radius: 15px;
+    transition: all 0.5s;
     /* margin: auto; */
   }
-  
+  #enviarCarros:hover{
+    background-color: #dda900;
+
+  }
+
+  /*  modal motoristas */
+
+  .modalMotorista {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+}
+
+.modal-contentMotorista {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+  border-radius: 15px;
+
+}
+
+.modal-contentMotorista input,
+.modal-contentMotorista select {
+    border: #300046 solid 1px;
+    border-radius: 5px;
+    width: 9vw;
+}
+
+.modal-contentMotorista h2 {
+    text-align: center;
+}
+
+
+.modal-contentMotorista  form {
+    width: 100%;
+    /* background-color: #0664f0; */
+
+}
+.modal-contentMotorista  form article{
+  margin: 2vh auto;
+  width: 80%;
+  /* background-color: #9e1414; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-contentMotorista form article   input {
+    border: #300046 solid 1px;
+    outline: none;
+}
+
+.closeMotorista {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeMotorista:hover,
+.closeMotorista:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#btnEnviarMotorista{
+  width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#enviarMotorista{
+  width: 8vw;
+  height: 5vh;
+  background-color: #fccc30;
+  border-radius: 15px;
+  transition: all 0.5s;
+  /* margin: auto; */
+}
+#enviarMotorista:hover{
+  background-color: #dda900;
+
+}
+/* modal registros */
+
+.modalRegistro {
+  display: none; /* Esconde o modal por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  margin-left: 20%;
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+}
+
+.modal-contentRegistro {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  border-radius: 15px;
+
+}
+
+.modal-contentRegistro input,
+.modal-contentRegistro select {
+  border: #300046 solid 1px;
+  border-radius: 5px;
+  width: 9vw;
+}
+
+.modal-contentRegistro h2 {
+  text-align: center;
+}
+
+
+.modal-contentRegistro  form {
+  width: 100%;
+  /* background-color: #0664f0; */
+
+}
+.modal-contentRegistro  form article{
+margin: 2vh auto;
+width: 80%;
+/* background-color: #9e1414; */
+display: flex;
+justify-content: space-around;
+}
+
+.modal-contentRegistro form article   input {
+  border: #300046 solid 1px;
+  outline: none;
+}
+
+.closeRegistro {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeRegistro:hover,
+.closeRegistro:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#btnEnviarRegistro{
+width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#enviarRegistro{
+width: 8vw;
+height: 5vh;
+background-color: #fccc30;
+border-radius: 15px;
+transition: all 0.5s;
+/* margin: auto; */
+}
+#enviarRegistro:hover{
+background-color: #dda900;
+
+}
+
+/* modal sinistos */
+
+.modalSinistro {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  margin-left: 20%;
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contentSinistro {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  border-radius: 15px;
+}
+
+.modal-contentSinistro input,
+.modal-contentSinistro select {
+  border: #300046 solid 1px;
+  border-radius: 5px;
+  width: 9vw;
+}
+
+.modal-contentSinistro h2 {
+  text-align: center;
+}
+
+.modal-contentSinistro article {
+  width: fit-content;
+  margin: 10vh auto;
+}
+
+.modal-contentSinistro article div {
+  margin: auto 10px;
+}
+
+.modal-contentSinistro article div form input {
+  border: #300046 solid 2px;
+  outline: none;
+}
+
+.closeSinistro {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeSinistro:hover,
+.closeSinistro:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#btnEnviarSinistro{
+  width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #enviarSinistro{
+  width: 8vw;
+  height: 5vh;
+  background-color: #fccc30;
+  border-radius: 15px;
+  transition: all 0.5s;
+  /* margin: auto; */
+  }
+  #enviarSinistro:hover{
+  background-color: #dda900;
+  }

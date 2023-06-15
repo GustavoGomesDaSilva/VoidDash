@@ -17,7 +17,7 @@ $result_registros = $conn->query($sql_registros);
 
 $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistro DESC");
 
-    
+
 
 ?>
 
@@ -57,7 +57,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                 <!-- <p id="nomeUsuario" name="nomeUsuario">Analista de Dados</p> -->
                 <div id="iconsTopEsquerda">
                     <a href="../config/logout.php"><img src="../components/assets/SignOut.svg" alt=""></a>
-                    <a href="areaDeControleConfig.php"><img src="../components/assets/configIcon.png" alt=""></a>
+                    <img src="../components/assets/configIcon.png" alt="">
                 </div>
             </section>
             <section id="opcoesMenu">
@@ -66,12 +66,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                     <li id="areaSinistros"> <img src="../components/assets/multasIcon.png" alt=""> Sinistros</li>
                     <li id="areaMotoristas"> <img src="../components/assets/motoIcon.png" alt=""> Motoristas</li>
                     <li id="areaCarros"> <img src="../components/assets/carIcon.png" alt=""> Carros</li>
-                    <!-- <div id="btnUpload">
-                        <form method="POST" action="../importSinistros.php" enctype="multipart/form-data">
-                            <li> <img src="../components/assets/CloudArrowUp.png" alt=""> <input type="file" name="xlsx"></li>
-                            <input type="submit" value="Enviar">
-                        </form>
-                    </div> -->
+
                 </ul>
             </section>
         </article>
@@ -94,8 +89,42 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
-                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                                <button class="btn-add-field" id="openModalBtnRegistro" onclick="openModalBtnRegistro()"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
+                            <div id="myModalRegistro" class="modalRegistro">
+                                <div class="modal-contentRegistro">
+                                    <span class="closeRegistro">&times;</span>
+                                    <h2>Adicionar registro</h2>
+                                    <span style="width: 100%; display:flex; justify-content: center;">
+                                        <i><span style="color: red;">Importante*</span> a placa e a matrícula, ja devem existir em suas respectivas tabelas</i>
+                                    </span>
+                                    <form action="../config/insertRegistros.php" method="post">
+
+                                        <article style="display: flex!important;">
+                                            <div id="matriculaRegistro">
+                                                <p>Matrícula</p>
+                                                <input type="text" id="matriculaAdicionar" name="matriculaAdicionar">
+                                            </div>
+                                            <div id="placaRegistro">
+                                                <p>Placa</p>
+                                                <input type="text" id="placaAdicionar" name="placaAdicionar">
+                                            </div>
+                                            <div id="dtSaidaRegistro">
+                                                <p>Data de Saída</p>
+                                                <input type="text" id="dtSaidaAdicionar" name="dtSaidaAdicionar">
+                                            </div>
+                                            <div id="dtRetornoRegistro">
+                                                <p>Previsão de Retorno</p>
+                                                <input type="text" id="dtRetornoAdicionar" name="dtRetornoAdicionar">
+                                            </div>
+                                        </article>
+                                        <div id="btnEnviarRegistro">
+                                            <input type="submit" value="Enviar" id="enviarRegistro">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
                             <table class="carros-tabela">
                                 <thead>
                                     <tr>
@@ -103,10 +132,10 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         <th scope="col">Nome</th>
                                         <th scope="col">Matricula</th>
                                         <th scope="col">CNH</th>
-                                        <th scope="col">Veiculo</th>
+                                        <th scope="col">Veículo</th>
                                         <th scope="col">Placa</th>
                                         <th scope="col">Data da Saida</th>
-                                        <th scope="col">Previsao do Retorno</th>
+                                        <th scope="col">Previsão do Retorno</th>
                                         <th scope="col">Ações</th>
 
 
@@ -142,14 +171,44 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                 <section id="sinistros" style="display: none">
                     <article>
-                    <h1 class="tituloAreas">Área de Sinistros</h1>
+                        <h1 class="tituloAreas">Área de Sinistros</h1>
 
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
-                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
-
+                                <button id="openModalBtnSinistro" class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
+                            <div id="myModalSinistro" class="modalSinistro">
+                                <div class="modal-contentSinistro">
+                                    <span class="closeSinistro">&times;</span>
+                                    <h2>Adicionar sinistro</h2>
+                                    <form action="../config/insertSinistros.php" method="post">
+
+                                        <article style="display: flex;">
+                                            <div id="idRegistroSinistro">
+                                                <p>Identificação <br>Registro</p>
+                                                <input type="text" id="idRegistroAdicionar" name="idRegistroAdicionar">
+                                            </div>
+                                            <div id="tipoSinistro">
+                                                <p>Tipo</p><br>
+                                                <input type="text" id="tipoAdicionar" name="tipoAdicionar">
+                                            </div>
+                                            <div id="descricaoSinistro">
+                                                <p>Descrição</p><br>
+                                                <input type="text" id="descricaoAdicionar" name="descricaoAdicionar">
+                                            </div>
+                                            <div id="dtSinistroSinistro">
+                                                <p>Data</p><br>
+                                                <input type="text" id="dtSinistroAdicionar" name="dtSinistroAdicionar">
+                                            </div>
+                                        </article>
+                                        <div id="btnEnviarSinistro">
+                                            <input type="submit" value="Enviar" id="enviarSinistro">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
                             <table class="sinistro-tabela">
                                 <thead>
                                     <tr>
@@ -208,17 +267,55 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                 <section id="motoristas" style="display: none">
                     <article>
-                    <h1 class="tituloAreas">Área de Motoristas</h1>
+                        <h1 class="tituloAreas">Área de Motoristas</h1>
 
-                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
+                        <div class="m-5" style="width: 84%!important; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
-                                <button class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                                <button class="btn-add-field" id="openModalMotoristasBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
+                            <div id="myModalMotorista" class="modalMotorista">
+                                <div class="modal-contentMotorista">
+                                    <span class="closeMotorista">&times;</span>
+                                    <h2>Adicionar motorista</h2>
+
+
+                                    <form action="../config/insertMotoristas.php" method="post">
+                                        <article style="display: flex!important;">
+
+                                            <div id="matriculaMotorista">
+                                                <p>Matrícula</p>
+                                                <input type="text" id="matriculaAdicionar" name="matriculaAdicionar">
+                                            </div>
+                                            <div id="nomeMotorista">
+                                                <p>Nome</p>
+                                                <input type="text" id="nomeAdicionar" name="nomeAdicionar">
+                                            </div>
+                                            <div id="cnhMotorista">
+                                                <p>CNH</p>
+                                                <input type="text" id="cnhAdicionar" name="cnhAdicionar">
+                                            </div>
+                                            <div id="dataMotorista">
+                                                <p>Data de Nascimento</p>
+                                                <input type="text" id="dataAdicionar" name="dataAdicionar">
+                                            </div>
+
+
+
+
+                                        </article>
+                                        <div id="btnEnviarMotorista">
+                                            <input type="submit" value="Enviar" id="enviarMotorista">
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
                             <table class="motoristas-tabela">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Matricula</th>
+                                        <th scope="col">Matrícula</th>
                                         <th scope="col">Nome</th>
                                         <th scope="col">CNH</th>
                                         <th scope="col">Data de Nascimento</th>
@@ -250,64 +347,64 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                 <section id="carros" style="display: none">
                     <article>
-                    <h1 class="tituloAreas">Área de Carros</h1>
+                        <h1 class="tituloAreas">Área de Carros</h1>
 
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 50vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                           <form action="../config/importCarros.php" method="post" enctype="multipart/form-data">
-                             <input type="file" id="xlsx" name="xlsx" style="display:none;">
-                             <label for="xlsx" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
-                             <button type="submit">Enviar</button>                             
-                            </form>
-                            <button class="btn-add-field" id="openModalBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>
+                                <form action="../config/importCarros.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" id="xlsx" name="xlsx" style="display:none;">
+                                    <label for="xlsx" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                                    <button type="submit" class="btnEnviarUpload">Enviar</button>
+                                </form>
+                                <button class="btn-add-field" id="openModalBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
                             <div id="myModal" class="modal">
                                 <div class="modal-content">
                                     <span class="close">&times;</span>
                                     <h2>Adicionar carro</h2>
 
-                                    <article  style="display: flex;">
-                                    <div id="locadorasCarro">
-                                        <form action="../config/insertCarros.php" method="post">
-                                            <p>Locadora </p> 
-                                            <select name="id_categoria" id="select">
-                                                        <option value="1">Car4U</option>
-                                                        <option value="2">EasyCar</option>
-                                                        <option value="3">DriveOut</option>
-                                                    </select>            
-                                        
-                                </div>
-                                    <div id="placaCarros" >
-                                       
+                                    <article style="display: flex;">
+                                        <div id="locadorasCarro">
+                                            <form action="../config/insertCarros.php" method="post">
+                                                <p>Locadora </p>
+                                                <select name="id_categoria" id="select">
+                                                    <option value="1">Car4U</option>
+                                                    <option value="2">EasyCar</option>
+                                                    <option value="3">DriveOut</option>
+                                                </select>
+
+                                        </div>
+                                        <div id="placaCarros">
+
                                             <p>Placa</p>
-                                            <input type="text" id="placaAdicionar" name="placaAdicionar">             
-                                    
-                                    </div>
-                                    <div id="marcaCarros" >
+                                            <input type="text" id="placaAdicionar" name="placaAdicionar">
+
+                                        </div>
+                                        <div id="marcaCarros">
                                             <p>Marca</p>
-                                            <input type="text" id="marcaAdicionar" name="marcaAdicionar">             
-                                    
-                                    </div>
-                                    <div id="carroCarros" >
+                                            <input type="text" id="marcaAdicionar" name="marcaAdicionar">
+
+                                        </div>
+                                        <div id="carroCarros">
                                             <p>Nomne do carro</p>
-                                            <input type="text" id="carroAdicionar" name="carroAdicionar">             
-                                    
-                                    </div>
-                                    <div id="modeloCarros" >
+                                            <input type="text" id="carroAdicionar" name="carroAdicionar">
+
+                                        </div>
+                                        <div id="modeloCarros">
                                             <p>Modelo do carro</p>
-                                            <input type="text" id="modeloAdicionar" name="modeloAdicionar">                                                 
-                                    </div>
-                                    <div id="corCarros" >
+                                            <input type="text" id="modeloAdicionar" name="modeloAdicionar">
+                                        </div>
+                                        <div id="corCarros">
                                             <p>Cor do carro</p>
-                                            <input type="text" id="corAdicionar" name="corAdicionar">             
-                                    
-                                    </div>
-                                    
+                                            <input type="text" id="corAdicionar" name="corAdicionar">
+
+                                        </div>
+
                                     </article>
                                     <div id="btnEnviar">
                                         <input type="submit" value="Enviar" id="enviarCarros">
                                     </div>
-                                </form>
+                                    </form>
                                 </div>
                             </div>
                             <table class="carros-tabela">
@@ -336,22 +433,18 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo "<td>" . $user_data['modelo'] . "</td>";
                                         echo "<td>" . $user_data['cor'] . "</td>";
                                         echo "<td>";
-                                        if ($user_data['ativo'] == 1) {
-                                            echo '<button id="ativo" class="ativo-icone" onclick="trocarAtivo()">&#10003;</button>'; // Símbolo de "certo"
-                                        } else {
-                                            echo '<button class="ativo-icone">&#10007;</button>'; // Símbolo de "xiszinho"
-                                        }
+
+                                        echo '<button class="ativo-icone ' . ($user_data['ativo'] == 1 ? 'ativo' : 'inativo') . '" onclick="trocarAtivo(this)">' . ($user_data['ativo'] == 1 ? '&#10003;' : '&#10007;') . '</button>';
+
                                         echo '<td>
-                                        <div class="btn-group-edit">
-                                        <button class="btn-edit" onclick="editarCarro(' . $user_data['placa'] . ')"><i class="fas fa-edit"></i></button>
-                                   
-                                        <button class="btn-deletar" onclick="deletarCarro(this)" data-placa=" '. $user_data['placa'].'"><i class="fas fa-trash-alt"></i></button>
-
-                                        </div>
-
-                                        </td>';
+                                            <div class="btn-group-edit">
+                                                <button class="btn-edit" onclick="editarCarro(' . $user_data['placa'] . ')"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-deletar" onclick="deletarCarro(this)" data-placa="' . $user_data['placa'] . '"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                          </td>';
                                         echo "</tr>";
                                     }
+
                                     ?>
 
                                 </tbody>
@@ -365,27 +458,28 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
 
     <script>
-function deletarCarro(btn) {
-    var placa = btn.getAttribute('data-placa');
+        function deletarCarro(btn) {
+            var placa = btn.getAttribute('data-placa');
 
-    if (confirm('Deseja excluir a tupla com a placa: ' + placa + '?')) {
-        // Faça uma solicitação AJAX para excluir a tupla no lado do servidor
-        // Passando o valor da placa como parâmetro para identificar a tupla a ser excluída
+            if (confirm('Deseja excluir a tupla com a placa: ' + placa + '?')) {
+                // Faça uma solicitação AJAX para excluir a tupla no lado do servidor
+                // Passando o valor da placa como parâmetro para identificar a tupla a ser excluída
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'excluir_carro.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                alert(xhr.responseText);
-                // Atualize a tabela ou execute outras ações necessárias após excluir a tupla
-            } else {
-                alert('Erro ao excluir a tupla.');
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'excluir_carro.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        alert(xhr.responseText);
+                        // Atualize a tabela ou execute outras ações necessárias após excluir a tupla
+                    } else {
+                        alert('Erro ao excluir a tupla.');
+                    }
+                };
+                xhr.send('placa=' + encodeURIComponent(placa));
             }
-        };
-        xhr.send('placa=' + encodeURIComponent(placa));
-    }
-}
+        }
+
 
 
 
@@ -593,54 +687,128 @@ function deletarCarro(btn) {
         registros.classList.remove("fade");
     });
 
-    
-        
 
-        // Obtém o botão de abrir o modal
-            var openModalBtn = document.getElementById("openModalBtn");
 
-            // Obtém o modal
-            var modal = document.getElementById("myModal");
 
-            // Obtém o elemento <span> que fecha o modal
-            var closeBtn = document.getElementsByClassName("close")[0];
+    // Obtém o botão de abrir o modal
+    var openModalBtn = document.getElementById("openModalBtn");
 
-            // Quando o usuário clicar no botão, abre o modal
-            openModalBtn.onclick = function() {
-            modal.style.display = "block";
-            };
+    // Obtém o modal
+    var modal = document.getElementById("myModal");
 
-            // Quando o usuário clicar no botão de fechar, fecha o modal
-            closeBtn.onclick = function() {
+    // Obtém o elemento <span> que fecha o modal
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Quando o usuário clicar no botão, abre o modal
+    openModalBtn.onclick = function() {
+        modal.style.display = "block";
+    };
+
+    // Quando o usuário clicar no botão de fechar, fecha o modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Quando o usuário clicar fora do modal, fecha-o
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
-            };
-
-            // Quando o usuário clicar fora do modal, fecha-o
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            };
-          
-
-            function trocarAtivo() {
-    // Obtém o elemento do ícone
-    var icon = document.querySelector('.ativo-icone');
-
-    // Adiciona um evento de clique ao ícone
-    icon.addEventListener('click', function() {
-        if (icon.style.backgroundColor === 'rgb(201, 33, 33)') { // Verifica se está vermelho
-            icon.style.backgroundColor = '#008000'; // Altera para verde
-            icon.innerHTML = '&#10003;';
-
-            
-        } else {
-            icon.style.backgroundColor = '#c92121'; // Altera para vermelho
-            icon.innerHTML = '&#10007;';
-
-            // Realizar a query de update aqui, definindo 'ativo' como 0 na tabela 'carros'
         }
-    });
-}
+    };
 
+    // modal motoristas
+
+
+
+    // Quando o usuário clicar no botão, abre o modal
+    var openModalBtnMotorista = document.getElementById("openModalMotoristasBtn");
+
+    // Obtém o modal
+    var modalMotorista = document.getElementById("myModalMotorista");
+
+    // Obtém o elemento <span> que fecha o modal
+    var closeBtnMotorista = document.getElementsByClassName("closeMotorista")[0];
+
+    // Quando o usuário clicar no botão, abre o modal
+    openModalBtnMotorista.onclick = function() {
+        modalMotorista.style.display = "block";
+    };
+
+    // Quando o usuário clicar no botão de fechar, fecha o modal
+    closeBtnMotorista.onclick = function() {
+        modalMotorista.style.display = "none";
+    };
+
+    // Quando o usuário clicar fora do modal, fecha-o
+    window.onclick = function(event) {
+        if (event.target == modalMotorista) {
+            modalMotorista.style.display = "none";
+        }
+    };
+
+
+    // modal registros
+
+    var openModalBtnRegistro = document.getElementById("openModalBtnRegistro");
+    var modalRegistro = document.getElementById("myModalRegistro");
+    var closeBtnRegistro = document.getElementsByClassName("closeRegistro")[0];
+
+    // Verifica se o elemento existe antes de atribuir o evento
+    if (openModalBtnRegistro) {
+        openModalBtnRegistro.onclick = function() {
+            modalRegistro.style.display = "block";
+        };
+    }
+
+    // Verifica se o elemento existe antes de atribuir o evento
+    if (closeBtnRegistro) {
+        closeBtnRegistro.onclick = function() {
+            modalRegistro.style.display = "none";
+        };
+    }
+
+    // Quando o usuário clicar fora do modal, fecha-o
+    window.onclick = function(event) {
+        if (event.target == modalRegistro) {
+            modalRegistro.style.display = "none";
+        }
+    };
+
+    // modal sinistros
+
+    var openModalBtnSinistro = document.getElementById("openModalBtnSinistro");
+    var modalSinistro = document.getElementById("myModalSinistro");
+    var closeBtnSinistro = document.getElementsByClassName("closeSinistro")[0];
+
+    // Verifica se o elemento existe antes de atribuir o evento
+    if (openModalBtnSinistro) {
+        openModalBtnSinistro.onclick = function() {
+            modalSinistro.style.display = "block";
+        };
+    }
+
+    // Verifica se o elemento existe antes de atribuir o evento
+    if (closeBtnSinistro) {
+        closeBtnSinistro.onclick = function() {
+            modalSinistro.style.display = "none";
+        };
+    }
+
+    // Quando o usuário clicar fora do modal, fecha-o
+    window.onclick = function(event) {
+        if (event.target == modalSinistro) {
+            modalSinistro.style.display = "none";
+        }
+    };
+
+
+    // 
+
+    function trocarAtivo(botao) {
+        botao.classList.toggle("ativo");
+        botao.classList.toggle("inativo");
+        botao.innerHTML = botao.classList.contains("ativo") ? "&#10003;" : "&#10007;";
+
+        // Faça qualquer outra ação necessária aqui ao alternar entre "ativo" e "inativo"
+    }
 </script>
