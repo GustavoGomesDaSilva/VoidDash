@@ -6,7 +6,7 @@ require('config.php');
 require ('../vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$arquivo = $_FILES["xlsx"]["tmp_name"];
+$arquivo = $_FILES["fileImportCarros"]["tmp_name"];
 
 $reader = IOFactory::createReader('Xlsx');
 $spreadsheet = $reader->load($arquivo);

@@ -88,7 +88,11 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                         <h1 class="tituloAreas">Área de Registros</h1>
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                            <form action="../config/importRegistros.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" id="fileImportRegistros" name="fileImportRegistros" style="display:none;">
+                                    <label for="fileImportRegistros" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                                    <button type="submit" class="btnEnviarUpload">Enviar</button>
+                                </form>
                                 <button class="btn-add-field" id="openModalBtnRegistro" onclick="openModalBtnRegistro()"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
                             <div id="myModalRegistro" class="modalRegistro">
@@ -175,7 +179,11 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                            <form action="../config/importSinistros.php"  method="post" enctype="multipart/form-data">
+                                    <input type="file" id="fileImportSinistros" name="fileImportSinistros" style="display:none;">
+                                    <label for="fileImportSinistros" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                                    <button type="submit" class="btnEnviarUpload">Enviar</button>
+                                </form>
                                 <button id="openModalBtnSinistro" class="btn-add-field"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
                             <div id="myModalSinistro" class="modalSinistro">
@@ -271,7 +279,11 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                         <div class="m-5" style="width: 84%!important; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                                <button class="btn-upload"><i class="fas fa-upload"></i> Upload</button>
+                            <form action="../config/importMotoristas.php" method="post" enctype="multipart/form-data">
+                                    <input type="file" id="fileImportMotoristas" name="fileImportMotoristas" style="display:none;">
+                                    <label for="fileImportMotoristas" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                                    <button type="submit" class="btnEnviarUpload">Enviar</button>
+                                </form>
                                 <button class="btn-add-field" id="openModalMotoristasBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>
                             </div>
                             <div id="myModalMotorista" class="modalMotorista">
@@ -352,8 +364,8 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 50vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <form action="../config/importCarros.php" method="post" enctype="multipart/form-data">
-                                    <input type="file" id="xlsx" name="xlsx" style="display:none;">
-                                    <label for="xlsx" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
+                                    <input type="file" id="fileImportCarros" name="fileImportCarros" style="display:none;">
+                                    <label for="fileImportCarros" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
                                     <button type="submit" class="btnEnviarUpload">Enviar</button>
                                 </form>
                                 <button class="btn-add-field" id="openModalBtn"><i class="fas fa-plus"></i> Adicionar Campo</button>

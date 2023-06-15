@@ -3,14 +3,15 @@ extract($_POST);
 extract($_FILES);
 
 
-require('config/config.php');
-require ('vendor/autoload.php');
+require('config.php');
+require ('../vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 
 // var_dump($_FILES["xlsx"]["tmp_name"]);
 
-$arquivo = $_FILES["xlsx"]["tmp_name"];
+$arquivo = $_FILES["fileImportRegistros"]["tmp_name"];
+$inserted = false;
 
 
 $reader = IOFactory::createReader('Xlsx');
@@ -54,19 +55,17 @@ foreach ($sheet->getRowIterator() as $row) {
         $sql = "INSERT INTO `registros` (`matricula`, `placa`, `dtInicioUso`, `dtFimUso`) 
         VALUES ('$matricula', '$placa', '$dtInicioUso', '$dtFimUso')";
 
-    if($conn->query($sql) === TRUE) {
-        print "<script>alert('UPLOAD CONCLUÍDO COM SUCESSO!!!');</script>";
-        continue;
-    } else {
-     print "<script>alert('ERRO AO ADICIONAR DADOS AO BANCO DE DADOS' . );</script>";
-     echo $conn->error;
-     }
-    }
-
-    
+if ($conn->query($sql) === TRUE) {
+    $inserted = true; // Indica que pelo menos uma inserção ocorreu com sucesso
+} else {
+    echo "Erro ao adicionar dados ao banco de dados: " . $conn->error;
 }
-header("Refresh: 0; url=views/areadecontroleprincipal.php");
-
-
+}
+}
 
 $conn->close();
+
+if ($inserted) {
+header('Location: ../views/areaDeControlePrincipal.php'); // Redireciona para a página desejada
+exit(); // Encerra a execução do script
+}
