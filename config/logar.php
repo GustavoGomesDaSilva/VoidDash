@@ -20,7 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_email'] = $row['email'];
             print "<script>location .href='../views/areaDeControlePrincipal.php';</script>";
         } else {
-            print "<script>alert('Email e/ou senha incorreto(s)');</script>";
+            print "<script>alert('Email e/ou senha incorreto(s)');
+            window.location.href = '../views/login.php';</script>";
+            
+            
             
         }
     }

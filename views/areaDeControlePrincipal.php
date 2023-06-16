@@ -3,7 +3,7 @@
 include("../config/config.php");
 include("../config/sec.php");
 
-$sql_motoristas = "SELECT * FROM motoristas ORDER BY matricula DESC";
+$sql_motoristas = "SELECT * FROM motoristas WHERE ativo = '1' ORDER BY matricula DESC";
 $result_motoristas = $conn->query($sql_motoristas);
 
 $sql_carros = "SELECT * FROM carros ORDER BY locadora";
@@ -338,9 +338,11 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         <th scope="col">Ações</th>
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
                                     <?php
                                     while ($user_data = mysqli_fetch_assoc($result_motoristas)) {
+                                      
                                         echo "<tr>";
                                         echo "<td>" . $user_data['matricula'] . "</td>";
                                         echo "<td>" . $user_data['nome'] . "</td>";
@@ -444,11 +446,11 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                                     <?php
                                     while ($user_data = mysqli_fetch_assoc($result_carros)) {
-                                        echo "<tr>";
+                                        echo "<tr>"; 
                                         echo "<td>" . $user_data['locadora'] . "</td>";
                                         echo "<td>" . $user_data['placa'] . "</td>";
                                         echo "<td>" . $user_data['marca'] . "</td>";
-                                        echo "<td>" . $user_data['carro'] . "</td>";
+                                        echo "<td>" . $user_data['carro'] .  "</td>";
                                         echo "<td>" . $user_data['modelo'] . "</td>";
                                         echo "<td>" . $user_data['cor'] . "</td>";
                                         echo "<td>";
@@ -738,7 +740,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
     }
 
     function excluirMotorista(matricula) {
-        if (confirm("Tem certeza de que deseja excluir esta matrícula?")) {
+        if (confirm("Tem certeza de que deseja excluir esta matrícula?" )) {
             // Envia a requisição assíncrona para o arquivo PHP
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {

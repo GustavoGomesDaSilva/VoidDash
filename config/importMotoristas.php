@@ -27,7 +27,7 @@ foreach ($sheet->getRowIterator() as $row) {
     $dtNasc = Date::excelToDateTimeObject($dtNasc)->format('Y-m-d');
 
     if(strlen($matricula)<=4 && !is_null($matricula) && is_numeric($matricula)){
-    $matricula = str_pad($matricula, 4, "0", STR_PAD_LEFT);
+    $matricula = str_pad($matricula, 4, "0", STR_PAD_LEFT); 
     intval($matricula);
     }else{
         $matricula = NULL;
@@ -45,8 +45,8 @@ foreach ($sheet->getRowIterator() as $row) {
     
 
     if($matricula != NULL){
-        $sql = "INSERT INTO `motoristas` (`matricula`, `nome`, `cnh`, `dtNasc`) 
-        VALUES ('$matricula', '$nome', '$cnh', '$dtNasc')";
+        $sql = "INSERT INTO `motoristas` (`matricula`, `nome`, `cnh`, `dtNasc`, `ativo`) 
+        VALUES ('$matricula', '$nome', '$cnh', '$dtNasc', '1' )";
 if ($conn->query($sql) === TRUE) {
     $inserted = true; // Indica que pelo menos uma inserção ocorreu com sucesso
 } else {

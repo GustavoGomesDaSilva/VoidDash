@@ -4,8 +4,10 @@ include("../config/sec.php");
 
 $matricula = $_POST['matricula'];
 
+var_dump($matricula);
+
 // Prepara e executa a consulta SQL para deletar o registro
-$sql = "DELETE FROM `motoristas` WHERE `matricula` = '$matricula'";
+$sql = "UPDATE  `motoristas` SET `ativo` = '0' WHERE `matricula` = '$matricula'";
 if ($conn->query($sql) === TRUE) {
     echo "Registro deletado com sucesso!";
 } else {
