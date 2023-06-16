@@ -32,7 +32,6 @@ foreach ($sheet->getRowIterator() as $row) {
     $busca_registro = "SELECT * FROM `REGISTROS` WHERE `idRegistro` LIKE '%$idRegistro%'";
 
 
-
         $result = mysqli_query($conn, $busca_registro);
         if(mysqli_num_rows($result) > 0){
             $sql = "INSERT INTO `sinistros` (`idRegistro`, `tipo`, `descricao`, `dtSinistro`) 

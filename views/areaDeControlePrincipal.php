@@ -117,12 +117,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                             </div>
                                             <div id="dtSaidaRegistro">
                                                 <p>Data de Saída</p>
-                                                <input type="text" id="dtSaidaAdicionar" name="dtSaidaAdicionar">
+                                                <input type="date" id="dtSaidaAdicionar" name="dtSaidaAdicionar">
                                             </div>
-                                            <div id="dtRetornoRegistro">
-                                                <p>Previsão de Retorno</p>
-                                                <input type="text" id="dtRetornoAdicionar" name="dtRetornoAdicionar">
-                                            </div>
+                                           
                                         </article>
                                         <div id="btnEnviarRegistro">
                                             <input type="submit" value="Enviar" id="enviarRegistro">
@@ -179,7 +176,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                     <article>
                         <h1 class="tituloAreas">Área de Sinistros</h1>
 
-                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
+                        <div class="m-5" style="width: 90%!important; margin:auto; margin-bottom: 5vh; margin-left: 6vw;">
                             <div class="button-container" style="margin-bottom: 1vh;">
                                 <form action="../config/importSinistros.php" method="post" enctype="multipart/form-data">
                                     <input type="file" id="fileImportSinistros" name="fileImportSinistros" style="display:none;">
@@ -197,7 +194,10 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         <article style="display: flex;">
                                             <div id="idRegistroSinistro">
                                                 <p>Identificação <br>Registro</p>
-                                                <input type="text" id="idRegistroAdicionar" name="idRegistroAdicionar">
+                                                <input type="Number" id="idRegistroAdicionar" name="idRegistroAdicionar" >
+                                                <!-- onkeyup="pesquisar(this.value) -->
+                                                <div id="resultado">
+                                                </div>
                                             </div>
                                             <div id="tipoSinistro">
                                                 <p>Tipo</p><br>
@@ -209,7 +209,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                             </div>
                                             <div id="dtSinistroSinistro">
                                                 <p>Data</p><br>
-                                                <input type="text" id="dtSinistroAdicionar" name="dtSinistroAdicionar">
+                                                <input type="date" id="dtSinistroAdicionar" name="dtSinistroAdicionar">
                                             </div>
                                         </article>
                                         <div id="btnEnviarSinistro">
@@ -405,7 +405,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                                         </div>
                                         <div id="carroCarros">
-                                            <p>Nomne do carro</p>
+                                            <p>Nome do carro</p>
                                             <input type="text" id="carroAdicionar" name="carroAdicionar">
 
                                         </div>
@@ -456,8 +456,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo '<button class="ativo-icone ' . ($user_data['ativo'] == 1 ? 'ativo' : 'inativo') . '" onclick="trocarAtivo(this)">' . ($user_data['ativo'] == 1 ? '&#10003;' : '&#10007;') . '</button>';
 
                                         echo '<td>
-                                                 
-                                            <button class="btn-deletar" onclick="excluirCarro(' . $user_data['placa'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="btn-deletar" onclick="excluirCarro(\'' . $user_data['placa'] . '\')"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                           </td>';
                                         echo "</tr>";
@@ -719,11 +718,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
         }
     }
 
-
     function excluirCarro(placa) {
-        if (confirm("Tem certeza de que deseja excluir este registro?")) {
-
-
+        if (confirm("Tem certeza de que deseja excluir este registro?" + placa)) {
+            console.log(placa)
             // Envia a requisição assíncrona para o arquivo PHP
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -732,6 +729,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                     // Você pode adicionar aqui uma lógica para atualizar a tabela ou a página após a exclusão
                 }
             };
+
             xhttp.open("POST", "excluirCarro.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("placa=" + placa);
@@ -881,4 +879,15 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
         // Faça qualquer outra ação necessária aqui ao alternar entre "ativo" e "inativo"
     }
+
+    // function pesquisar(texto){
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "../config/pesquisa.php?texto=" + texto,
+    //         sucess: function(response){
+    //             $('#resultado').html(response);
+    //         }
+
+    //     })
+    // }
 </script>
