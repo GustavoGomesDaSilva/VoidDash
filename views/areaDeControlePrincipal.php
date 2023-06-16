@@ -19,6 +19,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
 
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,6 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 </head>
 
 <body>
-
     <main>
         <article id="menuEsquerda">
             <section id="topoMenuEsquerda">
@@ -86,9 +88,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                 <article id="registros" style="display: none;">
                     <section>
                         <h1 class="tituloAreas">Área de Registros</h1>
-                        <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
+                        <div class="m-5" style="width: 90%; margin:auto; margin-bottom: 5vh; margin-left: 5vw;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                            <form action="../config/importRegistros.php" method="post" enctype="multipart/form-data">
+                                <form action="../config/importRegistros.php" method="post" enctype="multipart/form-data">
                                     <input type="file" id="fileImportRegistros" name="fileImportRegistros" style="display:none;">
                                     <label for="fileImportRegistros" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
                                     <button type="submit" class="btnEnviarUpload">Enviar</button>
@@ -132,7 +134,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                             <table class="carros-tabela">
                                 <thead>
                                     <tr>
-                                        <!-- <th scope="col">ID Registro</th> -->
+                                        <th scope="col">ID Registro</th>
                                         <th scope="col">Nome</th>
                                         <th scope="col">Matricula</th>
                                         <th scope="col">CNH</th>
@@ -150,7 +152,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                     <?php
                                     while ($user_data = mysqli_fetch_assoc($result_registros)) {
                                         echo "<tr>";
-                                        // echo"<td>" . $user_data ['idRegistro'] . "</td>";
+                                        echo "<td>" . $user_data['idRegistro'] . "</td>";
                                         echo "<td>" . $user_data['nome'] . "</td>";
                                         echo "<td>" . $user_data['matricula'] . "</td>";
                                         echo "<td>" . $user_data['cnh'] . "</td>";
@@ -159,8 +161,8 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo "<td>" . $user_data['dtInicioUso'] . "</td>";
                                         echo "<td>" . $user_data['dtFimUso'] . "</td>";
                                         echo '<td><div class="btn-group-edit">
-                                    <button class="btn-edit" onclick="editarRegistros(' . $user_data['matricula'] . ')"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-deletar" onclick="deletarRegistros(' . $user_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                             
+                                    <button class="btn-deletar" onclick="excluirRegistro(' . $user_data['idRegistro'] . ')"><i class="fas fa-trash-alt"></i></button>
                                     </div>
                                 </td>';
                                         echo "</tr>";
@@ -179,7 +181,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                         <div class="m-5" style="width: 80%; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                            <form action="../config/importSinistros.php"  method="post" enctype="multipart/form-data">
+                                <form action="../config/importSinistros.php" method="post" enctype="multipart/form-data">
                                     <input type="file" id="fileImportSinistros" name="fileImportSinistros" style="display:none;">
                                     <label for="fileImportSinistros" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
                                     <button type="submit" class="btnEnviarUpload">Enviar</button>
@@ -238,7 +240,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                                     <?php
                                     while ($sinistro = mysqli_fetch_assoc($sinistro_list)) {
-                                        $registro = mysqli_query($conn, "SELECT registros.*, carros.placa, motoristas.nome, motoristas.matricula, sinistros.tipo, sinistros.descricao, sinistros.dtSinistro, motoristas.cnh
+                                        $registro = mysqli_query($conn, "SELECT registros.*, carros.placa, motoristas.nome, motoristas.matricula, sinistros.tipo, sinistros.descricao, sinistros.dtSinistro, sinistros.idSinistro, motoristas.cnh
                                             FROM registros
                                             INNER JOIN carros ON registros.placa = carros.placa
                                             INNER JOIN motoristas ON registros.matricula = motoristas.matricula
@@ -247,6 +249,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         if (mysqli_num_rows($registro) > 0) {
                                             $registro_data = mysqli_fetch_assoc($registro);
                                             echo "<tr>";
+                                            // var_dump($registro_data);
                                             // echo"<td>" . $user_data ['idRegistro'] . "</td>";
                                             echo "<td>" . $registro_data['nome'] . "</td>";
                                             echo "<td>" . $registro_data['matricula'] . "</td>";
@@ -258,8 +261,9 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                             echo "<td>" . $registro_data['tipo'] . "</td>";
                                             echo "<td>" . $registro_data['descricao'] . "</td>";
                                             echo "<td>" . $registro_data['dtSinistro'] . "</td>";
+
                                             echo '<td><div class="btn-group-edit">
-                                            <button class="btn-deletar" onclick="deletarRegistros(' . $registro_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                            <button class="btn-deletar" onclick="excluirSinistro(' . $registro_data['idSinistro'] . ')"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                 </td>';
                                             echo "</tr>";
@@ -279,7 +283,7 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
                         <div class="m-5" style="width: 84%!important; margin:auto; margin-bottom: 5vh;">
                             <div class="button-container" style="margin-bottom: 1vh;">
-                            <form action="../config/importMotoristas.php" method="post" enctype="multipart/form-data">
+                                <form action="../config/importMotoristas.php" method="post" enctype="multipart/form-data">
                                     <input type="file" id="fileImportMotoristas" name="fileImportMotoristas" style="display:none;">
                                     <label for="fileImportMotoristas" class="btn-upload"><i class="fas fa-upload"></i> Upload</label>
                                     <button type="submit" class="btnEnviarUpload">Enviar</button>
@@ -343,13 +347,16 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo "<td>" . $user_data['cnh'] . "</td>";
                                         echo "<td>" . $user_data['dtNasc'] . "</td>";
                                         echo '<td><div class="btn-group-edit">
-                                        <button class="btn-edit" onclick="editarMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-deletar" onclick="deletarMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
+                                       
+                                        <button class="btn-deletar" onclick="excluirMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                         
                             </td>';
                                         echo "</tr>";
                                     }
+
+                                    // <button class="btn-edit" onclick="editarMotorista(' . $user_data['matricula'] . ')"><i class="fas fa-edit"></i></button>
+
                                     ?>
                                 </tbody>
                             </table>
@@ -449,9 +456,8 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
                                         echo '<button class="ativo-icone ' . ($user_data['ativo'] == 1 ? 'ativo' : 'inativo') . '" onclick="trocarAtivo(this)">' . ($user_data['ativo'] == 1 ? '&#10003;' : '&#10007;') . '</button>';
 
                                         echo '<td>
-                                            <div class="btn-group-edit">
-                                                <button class="btn-edit" onclick="editarCarro(' . $user_data['placa'] . ')"><i class="fas fa-edit"></i></button>
-                                                <button class="btn-deletar" onclick="deletarCarro(this)" data-placa="' . $user_data['placa'] . '"><i class="fas fa-trash-alt"></i></button>
+                                                 
+                                            <button class="btn-deletar" onclick="excluirCarro(' . $user_data['placa'] . ')"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                           </td>';
                                         echo "</tr>";
@@ -470,35 +476,6 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
 
 
     <script>
-        function deletarCarro(btn) {
-            var placa = btn.getAttribute('data-placa');
-
-            if (confirm('Deseja excluir a tupla com a placa: ' + placa + '?')) {
-                // Faça uma solicitação AJAX para excluir a tupla no lado do servidor
-                // Passando o valor da placa como parâmetro para identificar a tupla a ser excluída
-
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'excluir_carro.php', true);
-                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhr.onload = function() {
-                    if (xhr.status === 200) {
-                        alert(xhr.responseText);
-                        // Atualize a tabela ou execute outras ações necessárias após excluir a tupla
-                    } else {
-                        alert('Erro ao excluir a tupla.');
-                    }
-                };
-                xhr.send('placa=' + encodeURIComponent(placa));
-            }
-        }
-
-
-
-
-
-
-
-
         $(document).ready(function() {
             // ...
 
@@ -700,6 +677,87 @@ $sinistro_list = mysqli_query($conn, "SELECT * FROM sinistros ORDER BY idRegistr
     });
 
 
+    // delete carro
+
+    function excluirSinistro(idSinistro) {
+        if (confirm("Tem certeza de que deseja deletar este registro?")) {
+            // Envia a requisição assíncrona para o arquivo PHP
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText); // Exibe a mensagem retornada pelo PHP
+                    // Você pode adicionar aqui uma lógica para atualizar a tabela ou a página após a exclusão
+                }
+            };
+            xhttp.open("POST", "excluirSinistro.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("idSinistro=" + idSinistro);
+            location.reload();
+        }
+    }
+
+
+
+
+
+    function excluirRegistro(idRegistro) {
+        if (confirm("Tem certeza de que deseja excluir este registro?")) {
+
+
+            // Envia a requisição assíncrona para o arquivo PHP
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText); // Exibe a mensagem retornada pelo PHP
+                    // Você pode adicionar aqui uma lógica para atualizar a tabela ou a página após a exclusão
+                }
+            };
+            xhttp.open("POST", "excluirRegistro.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("idRegistro=" + idRegistro);
+            location.reload();
+        }
+    }
+
+
+    function excluirCarro(placa) {
+        if (confirm("Tem certeza de que deseja excluir este registro?")) {
+
+
+            // Envia a requisição assíncrona para o arquivo PHP
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText); // Exibe a mensagem retornada pelo PHP
+                    // Você pode adicionar aqui uma lógica para atualizar a tabela ou a página após a exclusão
+                }
+            };
+            xhttp.open("POST", "excluirCarro.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("placa=" + placa);
+            location.reload();
+        }
+    }
+
+    function excluirMotorista(matricula) {
+        if (confirm("Tem certeza de que deseja excluir esta matrícula?")) {
+            // Envia a requisição assíncrona para o arquivo PHP
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText); // Exibe a mensagem retornada pelo PHP
+                    // Você pode adicionar aqui uma lógica para atualizar a tabela ou a página após a exclusão
+                    location.reload();
+                }
+            };
+            xhttp.open("POST","excluirMotorista.php",true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("matricula=" + matricula);
+        }
+    }
+
+
+    // 
 
 
     // Obtém o botão de abrir o modal

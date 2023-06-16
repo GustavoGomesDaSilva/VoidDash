@@ -20,7 +20,7 @@ include("../config/cadastrar.php")
 </head>
 
 <body>
-
+    
     <div class="main-cadastro">
         <div class="cadastro-esquerda">
             <form action="../config/cadastrar.php" method="POST" id="formCadastro">
